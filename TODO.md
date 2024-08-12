@@ -5,62 +5,46 @@
 
 - [ ] useState
 - [ ] State updater functions
-  - [ ] setPerson((prevPerson) => ({ ...prevPerson, age: prevPerson.age + 1 }));
 - [ ] useEffect
 - [ ] useMemo
 - [ ] useRef
 - [ ] useCallback
 - [ ] useParams
 
-### Components
-
-- App
-
-  - Navigation
-    - Props
-      - prop1
-    - State
-      - state1
-    - Functions
-      - function1
-
 - [ ] React Testing Library
 
-- propTypes
+- [ ] propTypes
+- [ ] defaultProps
 
-  - isRequired
+### React Router
 
-- defaultProps
+- [ ] Link element
+- [ ] Nested routes
+- [ ] Dynamic segments
+- [ ] Context with Outlets
+- [ ] Catch-all route
+- [ ] Protected routes
+- [ ] errorElement
+- [ ] Routes file
+- [ ] Navigate component
+- [ ] useRouteError
 
-- React Router
+### Fetching data
 
-  - Link element
-  - Nested routes
-  - Dynamic segments
-  - Context with Outlets
-  - Catch-all route
-  - Protected routes
-  - errorElement
-  - routes file
-  - Navigate component
-  - useRouteError()
+- [ ] Fetch requests in React Components
+- [ ] Catching and handling errors
+- [ ] Lifting requests up
+- [ ] Custom Hooks
+- [ ] Managing multiple fetch requests
+- [ ] Request states
+  - [ ] data
+  - [ ] loading
+  - [ ] error
+- [ ] Performance patterns
 
-- Fetching data
+### Styling
 
-  - Fetch requests in React Components
-  - Catching and handling errors
-  - Lifting requests up
-  - Loading State
-  - Custom Hooks
-  - Managing multiple fetch requests
-  - Request states
-    - data
-    - loading
-    - error
-  - performance patterns
-
-- styling
-  - css modules
-  - css-in-js
-  - simple black and white style / jjk image palette
-  - chromatic aberration
+- [ ] CSS Modules
+- [ ] CSS-in-js
+- [ ] Simple black and white style / jjk image palette
+- [ ] Chromatic Aberration
