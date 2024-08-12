@@ -1,5 +1,5 @@
-- [ ] Keys
-- [ ] Props
+- [x] Keys
+- [x] Props
 
 - Hooks
 
@@ -14,7 +14,7 @@
 - [ ] React Testing Library
 
 - [ ] propTypes
-- [ ] defaultProps
+- [x] defaultProps
 
 - React Router
 
