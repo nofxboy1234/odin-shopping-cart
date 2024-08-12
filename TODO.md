@@ -10,14 +10,57 @@
 - [ ] useMemo
 - [ ] useRef
 - [ ] useCallback
+- [ ] useParams
 
 ### Components
 
 - App
+
   - Navigation
     - Props
-      - name
+      - prop1
     - State
-      - age
+      - state1
     - Functions
-      - shuffle
+      - function1
+
+- [ ] React Testing Library
+
+- propTypes
+
+  - isRequired
+
+- defaultProps
+
+- React Router
+
+  - Link element
+  - Nested routes
+  - Dynamic segments
+  - Context with Outlets
+  - Catch-all route
+  - Protected routes
+  - errorElement
+  - routes file
+  - Navigate component
+  - useRouteError()
+
+- Fetching data
+
+  - Fetch requests in React Components
+  - Catching and handling errors
+  - Lifting requests up
+  - Loading State
+  - Custom Hooks
+  - Managing multiple fetch requests
+  - Request states
+    - data
+    - loading
+    - error
+  - performance patterns
+
+- styling
+  - css modules
+  - css-in-js
+  - simple black and white style / jjk image palette
+  - chromatic aberration
