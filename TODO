@@ -1,5 +1,7 @@
 - React Testing Library
+- useParams?
 - propTypes
+  - isRequired
 - defaultProps
 - React Router
   - Link element
