@@ -1,9 +1,9 @@
-- React Testing Library
+- *React Testing Library
 - useParams?
-- propTypes
+- *propTypes
   - isRequired
-- defaultProps
-- React Router
+- *defaultProps
+- *React Router
   - Link element
   - Nested routes
   - Dynamic segments
@@ -28,7 +28,7 @@
   - performance patterns
 
 - styling
-  - css modules
-  - css-in-js
+  - *css modules
+  - *css-in-js
   - simple black and white style / jjk image palette
   - chromatic aberration
