@@ -1,0 +1,11 @@
+- keys
+- props
+
+- Hooks
+  - [x] UseState
+  - state updater functions
+    - setPerson((prevPerson) => ({ ...prevPerson, age: prevPerson.age + 1 }));
+  - useEffect
+  - ~useMemo
+  - ~useRef
+  - useCallback
