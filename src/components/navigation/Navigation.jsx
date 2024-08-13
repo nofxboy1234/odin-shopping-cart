@@ -1,19 +1,16 @@
-import Home from '../home/Home';
-import Shop from '../shop/Shop';
-import Cart from '../cart/Cart';
 import styles from './Navigation.module.css';
 
-const Navigation = () => {
+const Navigation = ({ setContentIndex }) => {
   return (
     <>
       <nav className={styles.navigation}>
-        <div className="nav-link" onClick={() => console.log('Show Home')}>
+        <div className="nav-link" onClick={() => setContentIndex(0)}>
           Home
         </div>
-        <div className="nav-link" onClick={() => console.log('Show Shop')}>
+        <div className="nav-link" onClick={() => setContentIndex(1)}>
           Shop
         </div>
-        <div className="nav-link" onClick={() => console.log('Show Cart')}>
+        <div className="nav-link" onClick={() => setContentIndex(2)}>
           Cart
         </div>
       </nav>
