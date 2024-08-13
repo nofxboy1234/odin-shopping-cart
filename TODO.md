@@ -1,5 +1,6 @@
 - [ ] Keys
 - [ ] Props
+- [ ] Children
 
 - Hooks
 
@@ -10,6 +11,7 @@
   - [ ] useRef
   - [ ] useCallback
   - [ ] useParams
+  - [ ] useOutletContext
 
 - [ ] React Testing Library
 
@@ -21,9 +23,11 @@
 
 - React Router
 
+  - [x] Install
   - [ ] Link element
   - [ ] Nested routes
   - [ ] Dynamic segments
+  - [ ] Outlet element
   - [ ] Context with Outlets
   - [ ] Catch-all route
   - [ ] Protected routes
