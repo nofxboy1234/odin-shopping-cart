@@ -13,6 +13,8 @@
 
 - [ ] React Testing Library
 
+  - [x] Install
+
 - [ ] propTypes
 - [ ] defaultProps
 
