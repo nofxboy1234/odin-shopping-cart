@@ -7,9 +7,15 @@ const Navigation = () => {
   return (
     <>
       <nav className={styles.navigation}>
-        <Home />
-        <Shop />
-        <Cart />
+        <div className="nav-link" onClick={() => console.log('Show Home')}>
+          Home
+        </div>
+        <div className="nav-link" onClick={() => console.log('Show Shop')}>
+          Shop
+        </div>
+        <div className="nav-link" onClick={() => console.log('Show Cart')}>
+          Cart
+        </div>
       </nav>
     </>
   );
