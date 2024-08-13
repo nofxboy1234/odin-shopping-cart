@@ -5,9 +5,19 @@ import Cart from '../cart/Cart';
 const Navigation = () => {
   return (
     <>
-      <Home />
-      <Shop />
-      <Cart />
+      <nav>
+        <ul>
+          <li>
+            <Home />
+          </li>
+          <li>
+            <Shop />
+          </li>
+          <li>
+            <Cart />
+          </li>
+        </ul>
+      </nav>
     </>
   );
 };
