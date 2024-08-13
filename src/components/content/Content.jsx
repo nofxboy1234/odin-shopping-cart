@@ -13,6 +13,10 @@ const Content = ({ contentIndex }) => {
   );
 };
 
+Content.defaultProps = {
+  contentIndex: 0,
+};
+
 Content.propTypes = {
   contentIndex: PropTypes.number.isRequired,
 };
