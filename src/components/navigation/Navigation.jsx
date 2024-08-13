@@ -1,7 +1,7 @@
 const Navigation = () => {
   return (
     <>
-      <div>Navigation</div>
+      <h1>Navigation</h1>
     </>
   );
 };
