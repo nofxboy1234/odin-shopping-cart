@@ -18,7 +18,7 @@
   - [x] Install
 
 - [ ] propTypes
-  - [ ] Install
+  - [x] Install
 - [ ] defaultProps
 
 - React Router
