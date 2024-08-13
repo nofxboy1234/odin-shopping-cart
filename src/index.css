@@ -3,5 +3,12 @@ div {
 }
 
 .nav-link {
+  background-color: white;
+  color: black;
   cursor: pointer;
+}
+
+.nav-link:hover {
+  background-color: black;
+  color: white;
 }

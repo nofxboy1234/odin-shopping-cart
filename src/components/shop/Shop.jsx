@@ -5,7 +5,7 @@ const Shop = () => {
 
   return (
     <>
-      <div className="nav-link">Shop</div>
+      <div>Shop</div>
     </>
   );
 };
