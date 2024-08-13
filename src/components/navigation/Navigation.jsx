@@ -1,4 +1,5 @@
 import styles from './Navigation.module.css';
+import PropTypes from 'prop-types';
 
 const Navigation = ({ setContentIndex }) => {
   return (
@@ -16,6 +17,10 @@ const Navigation = ({ setContentIndex }) => {
       </nav>
     </>
   );
+};
+
+Navigation.propTypes = {
+  setContentIndex: PropTypes.func.isRequired,
 };
 
 export default Navigation;

@@ -1,5 +1,5 @@
 - [ ] Keys
-- [ ] Props
+- [x] Props
 - [ ] Children
 
 - Hooks
@@ -17,7 +17,7 @@
 
   - [x] Install
 
-- [ ] propTypes
+- [x] propTypes
   - [x] Install
 - [ ] defaultProps
 

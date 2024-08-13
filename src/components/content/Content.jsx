@@ -1,6 +1,7 @@
 import Home from '../home/Home';
 import Shop from '../shop/Shop';
 import Cart from '../cart/Cart';
+import PropTypes from 'prop-types';
 
 const Content = ({ contentIndex }) => {
   return (
@@ -10,6 +11,10 @@ const Content = ({ contentIndex }) => {
       {contentIndex === 2 && <Cart />}
     </>
   );
+};
+
+Content.propTypes = {
+  contentIndex: PropTypes.number.isRequired,
 };
 
 export default Content;
