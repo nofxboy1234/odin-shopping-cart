@@ -4,7 +4,7 @@ const Cart = () => {
   const [products, setProducts] = useState([]);
   return (
     <>
-      <div>Cart</div>
+      <div className="nav-link">Cart</div>
     </>
   );
 };
