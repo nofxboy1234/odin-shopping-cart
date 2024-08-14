@@ -3,7 +3,7 @@ import Shop from '../shop/Shop';
 import Cart from '../cart/Cart';
 import PropTypes from 'prop-types';
 
-const Content = ({ contentIndex }) => {
+const Content = ({ contentIndex = 0 }) => {
   return (
     <>
       {contentIndex === 0 && <Home />}
@@ -11,10 +11,6 @@ const Content = ({ contentIndex }) => {
       {contentIndex === 2 && <Cart />}
     </>
   );
-};
-
-Content.defaultProps = {
-  contentIndex: 0,
 };
 
 Content.propTypes = {
