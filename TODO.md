@@ -13,15 +13,15 @@
   - [ ] useParams
   - [ ] useOutletContext
 
-- [ ] React Testing Library
+- [ ] \*React Testing Library
 
   - [x] Install
 
-- [x] propTypes
+- [x] \*propTypes
   - [x] Install
-- [x] defaultProps
+- [x] \*defaultProps
 
-- React Router
+- \*React Router
 
   - [x] Install
   - [ ] Link element
@@ -36,7 +36,7 @@
   - [ ] Routes file
   - [ ] useRouteError
 
-- Fetching data
+- \*Fetching data
 
   - [ ] Fetch requests in React Components
   - [ ] Catching and handling errors
@@ -49,7 +49,7 @@
     - [ ] Error
   - [ ] Performance patterns
 
-- Styling
+- \*Styling
 
   - [x] CSS Modules
     - [x] Configure named imports
