@@ -1,12 +1,22 @@
 import PropTypes from 'prop-types';
 
-const Product = ({ imageUrl = 'imageUrl', title = 'title', quantity = 0 }) => {
+const Product = ({ product, setCart }) => {
   return (
     <>
       <div className="product">
-        <img src={imageUrl} alt={`image of ${title}`} />
-        <div>{title}</div>
-        <div>{quantity}</div>
+        <img src={product.imageUrl} alt={`image of ${product.title}`} />
+        <div>{product.title}</div>
+        <div>{product.quantity}</div>
+        <button
+          onClick={() =>
+            setCart((cart) => {
+              console.log(`Cart before Adding to Cart: ${cart}`);
+              return [...cart, product.id];
+            })
+          }
+        >
+          Add to Cart
+        </button>
       </div>
     </>
   );

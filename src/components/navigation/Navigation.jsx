@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import styles from './Navigation.module.css';
 import PropTypes from 'prop-types';
 
-const Navigation = ({ setContentIndex }) => {
+const Navigation = ({ setContentIndex, cartCount }) => {
   return (
     <>
       <nav className={styles.navigation}>
@@ -12,7 +13,7 @@ const Navigation = ({ setContentIndex }) => {
           Shop
         </div>
         <div className="nav-link" onClick={() => setContentIndex(2)}>
-          Cart
+          Cart ({cartCount})
         </div>
       </nav>
     </>
