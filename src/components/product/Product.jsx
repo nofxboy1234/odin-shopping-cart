@@ -23,9 +23,8 @@ const Product = ({ product, setCart }) => {
 };
 
 Product.propTypes = {
-  imageUrl: PropTypes.string,
-  title: PropTypes.string,
-  quantity: PropTypes.number,
+  product: PropTypes.object,
+  setCart: PropTypes.func,
 };
 
 export default Product;

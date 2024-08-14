@@ -1,11 +1,11 @@
-import Product from '../product/Product';
+import CartItem from '../cartItem/CartItem';
 
 const Cart = ({ cart, findProduct }) => {
   return (
     <>
       <h1>Cart</h1>
-      {cart.map((productId) => {
-        return <Product key={productId} product={findProduct(productId)} />;
+      {cart.map((itemId) => {
+        return <CartItem key={itemId} cartItem={findProduct(itemId)} />;
       })}
     </>
   );
