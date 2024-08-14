@@ -5,7 +5,7 @@
 - Hooks
 
   - [x] useState
-  - [ ] State updater functions
+  - [x] State updater functions
   - [ ] useEffect
   - [ ] useMemo
   - [ ] useRef
