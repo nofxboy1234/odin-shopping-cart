@@ -6,9 +6,11 @@ import PropTypes from 'prop-types';
 const Content = ({ contentIndex = 0 }) => {
   return (
     <>
-      {contentIndex === 0 && <Home />}
-      {contentIndex === 1 && <Shop />}
-      {contentIndex === 2 && <Cart />}
+      <div className="content">
+        {contentIndex === 0 && <Home />}
+        {contentIndex === 1 && <Shop />}
+        {contentIndex === 2 && <Cart />}
+      </div>
     </>
   );
 };

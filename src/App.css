@@ -55,9 +55,14 @@
 .product {
   padding: 1rem;
   border: 1px solid black;
+  margin: 1rem;
 }
 
 .product:hover {
   background-color: black;
   color: white;
+}
+
+.content {
+  margin: 1rem;
 }

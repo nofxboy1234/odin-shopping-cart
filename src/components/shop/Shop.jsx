@@ -22,7 +22,7 @@ const tempProducts = [
 const Shop = ({ products = tempProducts }) => {
   return (
     <>
-      <div>Shop</div>
+      <h1>Shop</h1>
       {products.map((product) => {
         return (
           <Product
