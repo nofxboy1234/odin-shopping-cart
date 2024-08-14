@@ -1,7 +1,7 @@
 const Home = () => {
   return (
     <>
-      <div>Home</div>
+      <div>Welcome to Shopping Cart!</div>
     </>
   );
 };

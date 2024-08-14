@@ -1,17 +1,21 @@
-import { useState } from 'react';
+import PropTypes from 'prop-types';
 
-const Product = () => {
-  const [image, setImage] = useState(null);
-  const [title, setTitle] = useState('Product');
-  const [quantity, setQuantity] = useState(0);
-
+const Product = ({ imageUrl = 'imageUrl', title = 'title', quantity = 0 }) => {
   return (
     <>
-      <img src={image} alt={`image of ${title}`} />
-      <div>{title}</div>
-      <div>{quantity}</div>
+      <div className="product">
+        <img src={imageUrl} alt={`image of ${title}`} />
+        <div>{title}</div>
+        <div>{quantity}</div>
+      </div>
     </>
   );
+};
+
+Product.propTypes = {
+  imageUrl: PropTypes.string,
+  title: PropTypes.string,
+  quantity: PropTypes.number,
 };
 
 export default Product;

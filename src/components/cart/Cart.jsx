@@ -1,7 +1,8 @@
 import { useState } from 'react';
 
 const Cart = () => {
-  const [products, setProducts] = useState([]);
+  const [productIds, setProductIds] = useState([]);
+
   return (
     <>
       <div>Cart</div>
