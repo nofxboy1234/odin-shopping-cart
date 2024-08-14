@@ -1,7 +1,4 @@
-import { useState } from 'react';
 import Product from '../product/Product';
-
-// const tempProductIds = ['product 1', 'product 2'];
 
 const Cart = ({ cart, findProduct }) => {
   return (
