@@ -1,4 +1,4 @@
-- [ ] Keys
+- [x] Keys
 - [x] Props
 - [ ] Children
 
@@ -51,7 +51,7 @@
 
 - Styling
 
-  - [ ] CSS Modules
+  - [x] CSS Modules
     - [x] Configure named imports
   - [ ] CSS-in-js
     - [ ] styled-components
