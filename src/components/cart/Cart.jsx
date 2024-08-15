@@ -8,7 +8,7 @@ const Cart = ({ cart, findProduct }) => {
         return <CartItem key={itemId} cartItem={findProduct(itemId)} />;
       })}
       <button onClick={() => alert('Thanks for shopping with us!')}>
-        Check out and Pay
+        Check out
       </button>
     </>
   );

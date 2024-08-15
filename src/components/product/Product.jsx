@@ -6,7 +6,7 @@ const Product = ({ product, setCart }) => {
       <div className="product">
         <img src={product.imageUrl} alt={`image of ${product.title}`} />
         <div>{product.title}</div>
-        <div>{product.quantity}</div>
+        <input type="number" id="quantity" defaultValue={1} min={1} />
         <button
           onClick={() =>
             setCart((cart) => {

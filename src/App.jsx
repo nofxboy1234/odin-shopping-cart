@@ -7,19 +7,16 @@ const tempProducts = [
   {
     id: 1,
     imageUrl: '/products/1',
-    quantity: 1,
     title: 'product 1',
   },
   {
     id: 2,
     imageUrl: '/products/2',
-    quantity: 2,
     title: 'product 2',
   },
   {
     id: 3,
     imageUrl: '/products/3',
-    quantity: 3,
     title: 'product 3',
   },
 ];
