@@ -26,7 +26,27 @@ function App() {
   const [products, setProducts] = useState(tempProducts);
   const [cart, setCart] = useState([]);
 
-  const findProduct = (id) => products.find((product) => product.id === id);
+  const getProductById = (itemId) =>
+    products.find((product) => product.id === itemId);
+
+  const findProductInCart = (productId) =>
+    cart.find((item) => item.id === productId);
+
+  const addItemToCart = (newItem) => {
+    setCart([...cart, newItem]);
+  };
+
+  const updateItemInCart = (editedItem) => {
+    const updatedItems = cart.map((item) => {
+      if (editedItem.id === item.id) {
+        return editedItem;
+      } else {
+        return item;
+      }
+    });
+
+    setCart(updatedItems);
+  };
 
   return (
     <>
@@ -34,9 +54,11 @@ function App() {
       <Content
         contentIndex={contentIndex}
         cart={cart}
-        setCart={setCart}
         products={products}
-        findProduct={findProduct}
+        findProductInCart={findProductInCart}
+        addItemToCart={addItemToCart}
+        updateItemInCart={updateItemInCart}
+        getProductById={getProductById}
       />
     </>
   );

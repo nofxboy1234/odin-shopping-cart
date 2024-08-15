@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-const Product = ({ product, setCart }) => {
+const Product = ({
+  product,
+  findProductInCart,
+  addItemToCart,
+  updateItemInCart,
+}) => {
   const [quantity, setQuantity] = useState(1);
 
   return (
@@ -14,15 +19,16 @@ const Product = ({ product, setCart }) => {
           id="quantity"
           min={1}
           value={quantity}
-          onChange={(e) => setQuantity(e.target.value)}
+          onChange={(e) => {
+            setQuantity(e.target.value);
+
+            if (findProductInCart(product.id)) {
+              updateItemInCart({ id: product.id, quantity: quantity });
+            }
+          }}
         />
         <button
-          onClick={() =>
-            setCart((cart) => {
-              console.log(`Cart before Adding to Cart: ${cart}`);
-              return [...cart, product.id];
-            })
-          }
+          onClick={() => addItemToCart({ id: product.id, quantity: quantity })}
         >
           Add to Cart
         </button>

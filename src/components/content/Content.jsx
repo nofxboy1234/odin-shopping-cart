@@ -6,16 +6,31 @@ import PropTypes from 'prop-types';
 const Content = ({
   contentIndex = 0,
   cart,
-  setCart,
   products,
-  findProduct,
+  findProductInCart,
+  addItemToCart,
+  updateItemInCart,
+  getProductById,
 }) => {
   return (
     <>
       <div className="content">
         {contentIndex === 0 && <Home />}
-        {contentIndex === 1 && <Shop products={products} setCart={setCart} />}
-        {contentIndex === 2 && <Cart cart={cart} findProduct={findProduct} />}
+        {contentIndex === 1 && (
+          <Shop
+            products={products}
+            findProductInCart={findProductInCart}
+            addItemToCart={addItemToCart}
+            updateItemInCart={updateItemInCart}
+          />
+        )}
+        {contentIndex === 2 && (
+          <Cart
+            cart={cart}
+            updateItemInCart={updateItemInCart}
+            getProductById={getProductById}
+          />
+        )}
       </div>
     </>
   );
