@@ -15,8 +15,8 @@ const CartItem = ({ product, updateItemInCart, initialQuantity }) => {
           min={1}
           value={quantity}
           onChange={(e) => {
-            setQuantity(e.target.value);
-            updateItemInCart({ id: product.id, quantity: quantity });
+            setQuantity(Number(e.target.value));
+            updateItemInCart({ id: product.id, quantity: quantity + 1 });
           }}
         />
       </div>
