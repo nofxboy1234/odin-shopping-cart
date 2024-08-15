@@ -8,6 +8,7 @@ const Product = ({
   updateItemInCart,
 }) => {
   const [quantity, setQuantity] = useState(1);
+  const [isInCart, setIsInCart] = useState(false);
 
   return (
     <>
@@ -28,9 +29,12 @@ const Product = ({
           }}
         />
         <button
-          onClick={() => addItemToCart({ id: product.id, quantity: quantity })}
+          onClick={() => {
+            addItemToCart({ id: product.id, quantity: quantity });
+            setIsInCart(true);
+          }}
         >
-          Add to Cart
+          {isInCart ? 'Remove from Cart' : 'Add to Cart'}
         </button>
       </div>
     </>
