@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-const CartItem = ({ product, updateItemInCart, initialQuantity }) => {
+const CartItem = ({
+  product,
+  updateItemInCart,
+  initialQuantity,
+  removeItemFromCart,
+}) => {
   const [quantity, setQuantity] = useState(initialQuantity);
 
   return (
@@ -21,6 +26,13 @@ const CartItem = ({ product, updateItemInCart, initialQuantity }) => {
             updateItemInCart({ id: product.id, quantity: newValue });
           }}
         />
+        <button
+          onClick={() => {
+            removeItemFromCart(product.id);
+          }}
+        >
+          Remove from Cart
+        </button>
       </div>
     </>
   );

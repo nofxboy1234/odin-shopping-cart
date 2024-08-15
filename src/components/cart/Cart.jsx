@@ -1,6 +1,11 @@
 import CartItem from '../cartItem/CartItem';
 
-const Cart = ({ cart, updateItemInCart, getProductById }) => {
+const Cart = ({
+  cart,
+  updateItemInCart,
+  getProductById,
+  removeItemFromCart,
+}) => {
   return (
     <>
       <h1>Cart</h1>
@@ -11,6 +16,7 @@ const Cart = ({ cart, updateItemInCart, getProductById }) => {
             product={getProductById(item.id)}
             updateItemInCart={updateItemInCart}
             initialQuantity={item.quantity}
+            removeItemFromCart={removeItemFromCart}
           />
         );
       })}
