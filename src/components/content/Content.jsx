@@ -10,6 +10,7 @@ const Content = ({
   addItemToCart,
   updateItemInCart,
   getProductById,
+  removeItemFromCart,
 }) => {
   return (
     <>
@@ -20,6 +21,7 @@ const Content = ({
             products={products}
             addItemToCart={addItemToCart}
             updateItemInCart={updateItemInCart}
+            removeItemFromCart={removeItemFromCart}
           />
         )}
         {contentIndex === 2 && (
@@ -27,6 +29,7 @@ const Content = ({
             cart={cart}
             updateItemInCart={updateItemInCart}
             getProductById={getProductById}
+            removeItemFromCart={removeItemFromCart}
           />
         )}
       </div>

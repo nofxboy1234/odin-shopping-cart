@@ -45,6 +45,11 @@ function App() {
     setCart(updatedItems);
   };
 
+  const removeItemFromCart = (itemToRemoveId) => {
+    const updatedItems = cart.filter((item) => item.id != itemToRemoveId);
+    setCart(updatedItems);
+  };
+
   return (
     <>
       <Navigation
@@ -61,6 +66,7 @@ function App() {
         addItemToCart={addItemToCart}
         updateItemInCart={updateItemInCart}
         getProductById={getProductById}
+        removeItemFromCart={removeItemFromCart}
       />
     </>
   );

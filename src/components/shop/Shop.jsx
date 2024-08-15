@@ -1,7 +1,12 @@
 import Product from '../product/Product';
 import PropTypes from 'prop-types';
 
-const Shop = ({ products, addItemToCart, updateItemInCart }) => {
+const Shop = ({
+  products,
+  addItemToCart,
+  updateItemInCart,
+  removeItemFromCart,
+}) => {
   return (
     <>
       <h1>Shop</h1>
@@ -12,6 +17,7 @@ const Shop = ({ products, addItemToCart, updateItemInCart }) => {
             product={product}
             addItemToCart={addItemToCart}
             updateItemInCart={updateItemInCart}
+            removeItemFromCart={removeItemFromCart}
           />
         );
       })}
