@@ -20,7 +20,7 @@ const Product = ({
           min={1}
           value={quantity}
           onChange={(e) => {
-            setQuantity(e.target.value);
+            setQuantity(Number(e.target.value));
 
             if (findProductInCart(product.id)) {
               updateItemInCart({ id: product.id, quantity: quantity });

@@ -50,7 +50,13 @@ function App() {
 
   return (
     <>
-      <Navigation setContentIndex={setContentIndex} cartCount={cart.length} />
+      <Navigation
+        setContentIndex={setContentIndex}
+        cartCount={cart.reduce(
+          (total, cartItem) => total + cartItem.quantity,
+          0
+        )}
+      />
       <Content
         contentIndex={contentIndex}
         cart={cart}
