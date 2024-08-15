@@ -7,7 +7,6 @@ const Content = ({
   contentIndex = 0,
   cart,
   products,
-  findProductInCart,
   addItemToCart,
   updateItemInCart,
   getProductById,
@@ -19,7 +18,6 @@ const Content = ({
         {contentIndex === 1 && (
           <Shop
             products={products}
-            findProductInCart={findProductInCart}
             addItemToCart={addItemToCart}
             updateItemInCart={updateItemInCart}
           />

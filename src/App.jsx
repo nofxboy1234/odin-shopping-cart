@@ -29,9 +29,6 @@ function App() {
   const getProductById = (itemId) =>
     products.find((product) => product.id === itemId);
 
-  const findProductInCart = (productId) =>
-    cart.find((item) => item.id === productId);
-
   const addItemToCart = (newItem) => {
     setCart([...cart, newItem]);
   };
@@ -61,7 +58,6 @@ function App() {
         contentIndex={contentIndex}
         cart={cart}
         products={products}
-        findProductInCart={findProductInCart}
         addItemToCart={addItemToCart}
         updateItemInCart={updateItemInCart}
         getProductById={getProductById}
