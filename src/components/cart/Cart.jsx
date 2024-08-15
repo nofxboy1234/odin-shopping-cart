@@ -7,6 +7,9 @@ const Cart = ({ cart, findProduct }) => {
       {cart.map((itemId) => {
         return <CartItem key={itemId} cartItem={findProduct(itemId)} />;
       })}
+      <button onClick={() => alert('Thanks for shopping with us!')}>
+        Check out and Pay
+      </button>
     </>
   );
 };
