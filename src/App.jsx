@@ -29,8 +29,19 @@ function App() {
   const getProductById = (itemId) =>
     products.find((product) => product.id === itemId);
 
+  const getItemInCartById = (productId) =>
+    cart.find((item) => item.id === productId);
+
   const addItemToCart = (newItem) => {
-    setCart([...cart, newItem]);
+    const cartItem = getItemInCartById(newItem.id);
+    if (cartItem) {
+      newItem.quantity += cartItem.quantity;
+      updateItemInCart(newItem);
+    } else {
+      setCart([...cart, newItem]);
+    }
+
+    return newItem.quantity;
   };
 
   const updateItemInCart = (editedItem) => {

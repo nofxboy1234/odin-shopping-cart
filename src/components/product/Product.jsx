@@ -36,8 +36,12 @@ const Product = ({
               setIsInCart(false);
               setQuantity(1);
             } else {
-              addItemToCart({ id: product.id, quantity: quantity });
+              const quantityInCart = addItemToCart({
+                id: product.id,
+                quantity: quantity,
+              });
               setIsInCart(true);
+              setQuantity(quantityInCart);
             }
           }}
         >
