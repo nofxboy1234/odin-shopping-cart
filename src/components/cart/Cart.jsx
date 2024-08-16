@@ -20,9 +20,11 @@ const Cart = ({
           />
         );
       })}
-      <button onClick={() => alert('Thanks for shopping with us!')}>
-        Check out
-      </button>
+      {cart.length > 0 && (
+        <button onClick={() => alert('Thanks for shopping with us!')}>
+          Check out
+        </button>
+      )}
     </>
   );
 };
