@@ -15,6 +15,7 @@ const Product = ({
       <div className="product">
         <img src={product.imageUrl} alt={`image of ${product.title}`} />
         <div>{product.title}</div>
+        <div>{product.price.toFixed(2)}</div>
         <input
           type="number"
           id="quantity"
