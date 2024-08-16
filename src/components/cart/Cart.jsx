@@ -36,11 +36,13 @@ const Cart = ({
             items)
           </div>
           <div>
-            {cart.reduce((total, cartItem) => {
-              const subTotal =
-                cartItem.quantity * getProductById(cartItem.id).price;
-              return total + subTotal;
-            }, 0)}
+            {cart
+              .reduce((total, cartItem) => {
+                const subTotal =
+                  cartItem.quantity * getProductById(cartItem.id).price;
+                return total + subTotal;
+              }, 0)
+              .toFixed(2)}
           </div>
           <button onClick={() => alert('Thanks for shopping with us!')}>
             Check out
