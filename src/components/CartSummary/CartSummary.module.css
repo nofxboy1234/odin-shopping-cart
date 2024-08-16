@@ -1,8 +1,4 @@
-.cart {
-  display: flex;
-}
-
-.cartItems {
+.cartSummary {
   display: flex;
   flex-direction: column;
 }
