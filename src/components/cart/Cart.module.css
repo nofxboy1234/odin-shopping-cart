@@ -1,0 +1,13 @@
+.cart {
+  display: flex;
+}
+
+.cartItems {
+  display: flex;
+  flex-direction: column;
+}
+
+.cartSummary {
+  display: flex;
+  flex-direction: column;
+}
