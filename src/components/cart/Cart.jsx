@@ -8,14 +8,16 @@ const Cart = ({
   getProductById,
   removeItemFromCart,
 }) => {
-  if (cart.length === 0) {
-    return <h1>Your shopping cart is empty</h1>;
-  }
+  // if (cart.length === 0) {
+  //   return <h1>Your shopping cart is empty</h1>;
+  // }
+
+  console.log('rendering Cart');
 
   return (
     <>
       <h1>Cart</h1>
-      <div className={styles.cart}>
+      {/* <div className={styles.cart}>
         <div className={styles.cartItems}>
           {cart.map((item) => {
             return (
@@ -30,7 +32,7 @@ const Cart = ({
           })}
         </div>
         <CartSummary cart={cart} getProductById={getProductById} />
-      </div>
+      </div> */}
     </>
   );
 };

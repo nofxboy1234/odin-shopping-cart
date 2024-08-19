@@ -12,6 +12,8 @@ const Content = ({
   getProductById,
   removeItemFromCart,
 }) => {
+  console.log('rendering Content');
+
   return (
     <>
       <div className="content">

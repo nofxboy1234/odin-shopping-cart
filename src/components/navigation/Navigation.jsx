@@ -5,17 +5,19 @@ import { Link } from 'react-router-dom';
 import Shop from '../shop/Shop';
 
 const Navigation = ({ setContentIndex, cartCount }) => {
+  console.log('rendering Navigation');
+
   return (
     <>
       <nav className={styles.navigation}>
-        <div className="nav-link" onClick={() => setContentIndex(0)}>
-          Home
+        <div className="nav-link">
+          <Link to="home">Home</Link>
         </div>
         <div className="nav-link">
           <Link to="shop">Shop</Link>
         </div>
-        <div className="nav-link" onClick={() => setContentIndex(2)}>
-          Cart ({cartCount})
+        <div className="nav-link">
+          <Link to="cart">Cart ({cartCount})</Link>
         </div>
       </nav>
     </>
