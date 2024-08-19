@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
-  console.log('rendering Food');
+  console.log('rendering ErrorPage');
 
   return (
     <>
