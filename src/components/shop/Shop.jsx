@@ -1,7 +1,10 @@
 import Product from '../product/Product';
 import PropTypes from 'prop-types';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Food from '../food/Food';
+import Drinks from '../drinks/Drinks';
+import DefaultCategory from '../defaultCategory/DefaultCategory';
 
 const Shop = ({
   products,
@@ -9,18 +12,26 @@ const Shop = ({
   updateItemInCart,
   removeItemFromCart,
 }) => {
+  const { category } = useParams();
+
   console.log('rendering Shop');
 
   return (
     <>
       <h1>Shop</h1>
       <div>
-        <Link to="food">Food</Link>
+        <Link to="/shop/food">Food</Link>
       </div>
       <div>
-        <Link to="drinks">Drinks</Link>
+        <Link to="/shop/drinks">Drinks</Link>
       </div>
-      <Outlet />
+      {category === 'food' ? (
+        <Food />
+      ) : category === 'drinks' ? (
+        <Drinks />
+      ) : (
+        <DefaultCategory />
+      )}
       {/* {products.map((product) => {
         return (
           <Product

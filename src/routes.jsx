@@ -15,16 +15,10 @@ const routes = [
       {
         path: 'shop',
         element: <Shop />,
-        children: [
-          {
-            path: 'food',
-            element: <Food />,
-          },
-          {
-            path: 'drinks',
-            element: <Drinks />,
-          },
-        ],
+      },
+      {
+        path: 'shop/:category',
+        element: <Shop />,
       },
       {
         path: 'cart',
