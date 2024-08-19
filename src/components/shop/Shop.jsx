@@ -10,7 +10,7 @@ const Shop = ({
   return (
     <>
       <h1>Shop</h1>
-      {products.map((product) => {
+      {/* {products.map((product) => {
         return (
           <Product
             key={product.id}
@@ -20,7 +20,7 @@ const Shop = ({
             removeItemFromCart={removeItemFromCart}
           />
         );
-      })}
+      })} */}
     </>
   );
 };

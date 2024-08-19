@@ -9,8 +9,8 @@ const Navigation = ({ setContentIndex, cartCount }) => {
         <div className="nav-link" onClick={() => setContentIndex(0)}>
           Home
         </div>
-        <div className="nav-link" onClick={() => setContentIndex(1)}>
-          Shop
+        <div className="nav-link">
+          <a href="shop">Shop</a>
         </div>
         <div className="nav-link" onClick={() => setContentIndex(2)}>
           Cart ({cartCount})
