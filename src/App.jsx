@@ -2,6 +2,7 @@ import Navigation from './components/navigation/Navigation';
 import Content from './components/content/Content';
 import { useState } from 'react';
 import './App.css';
+import { Outlet } from 'react-router-dom';
 
 const tempProducts = [
   {
@@ -75,7 +76,8 @@ function App() {
           0
         )}
       />
-      <Content
+      <Outlet />
+      {/* <Content
         contentIndex={contentIndex}
         cart={cart}
         products={products}
@@ -83,7 +85,7 @@ function App() {
         updateItemInCart={updateItemInCart}
         getProductById={getProductById}
         removeItemFromCart={removeItemFromCart}
-      />
+      /> */}
     </>
   );
 }
