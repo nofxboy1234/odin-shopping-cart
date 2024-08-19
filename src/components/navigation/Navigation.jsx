@@ -11,7 +11,7 @@ const Navigation = ({ setContentIndex, cartCount }) => {
     <>
       <nav className={styles.navigation}>
         <div className="nav-link">
-          <Link to="home">Home</Link>
+          <Link to="/">Home</Link>
         </div>
         <div className="nav-link">
           <Link to="shop">Shop</Link>
