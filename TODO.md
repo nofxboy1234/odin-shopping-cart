@@ -12,6 +12,7 @@
   - [ ] useCallback
   - [ ] useParams
   - [ ] useSearchParams
+  - [ ] useLocation
   - [ ] \*useOutletContext
 
 - [ ] \*React Testing Library
