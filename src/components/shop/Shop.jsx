@@ -1,5 +1,6 @@
 import Product from '../product/Product';
 import PropTypes from 'prop-types';
+import { Outlet } from 'react-router-dom';
 
 const Shop = ({
   products,
@@ -10,6 +11,7 @@ const Shop = ({
   return (
     <>
       <h1>Shop</h1>
+      <Outlet />
       {/* {products.map((product) => {
         return (
           <Product
