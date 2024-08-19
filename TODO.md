@@ -11,6 +11,7 @@
   - [ ] useRef
   - [ ] useCallback
   - [ ] useParams
+  - [ ] useSearchParams
   - [ ] \*useOutletContext
 
 - [ ] \*React Testing Library
