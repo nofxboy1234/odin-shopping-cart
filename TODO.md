@@ -26,8 +26,8 @@
 - \*React Router
 
   - [x] Install
-  - [ ] Link element
-  - [ ] Nested routes
+  - [x] Link element
+  - [x] Nested routes
   - [ ] Dynamic segments
   - [ ] Outlet element
   - [ ] Context with Outlets
