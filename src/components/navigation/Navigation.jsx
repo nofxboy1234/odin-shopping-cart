@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import styles from './Navigation.module.css';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import Shop from '../shop/Shop';
 
 const Navigation = ({ setContentIndex, cartCount }) => {
   return (
@@ -10,7 +12,7 @@ const Navigation = ({ setContentIndex, cartCount }) => {
           Home
         </div>
         <div className="nav-link">
-          <a href="shop">Shop</a>
+          <Link to="shop">Shop</Link>
         </div>
         <div className="nav-link" onClick={() => setContentIndex(2)}>
           Cart ({cartCount})
