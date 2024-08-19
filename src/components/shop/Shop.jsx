@@ -9,6 +9,8 @@ const Shop = ({
   updateItemInCart,
   removeItemFromCart,
 }) => {
+  console.log('rendering Shop');
+
   return (
     <>
       <h1>Shop</h1>

@@ -64,6 +64,8 @@ function App() {
     setCart(updatedItems);
   };
 
+  console.log('rendering App');
+
   return (
     <>
       <Navigation
