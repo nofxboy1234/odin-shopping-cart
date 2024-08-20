@@ -24,8 +24,8 @@ const Navigation = ({ cartCount }) => {
   );
 };
 
-Navigation.propTypes = {
-  setContentIndex: PropTypes.func.isRequired,
-};
+// Navigation.propTypes = {
+//   setContentIndex: PropTypes.func.isRequired,
+// };
 
 export default Navigation;
