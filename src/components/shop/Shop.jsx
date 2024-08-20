@@ -28,6 +28,7 @@ const Shop = ({
       </div>
       {category === 'food' && <Food />}
       {category === 'drinks' && <Drinks />}
+
       {/* {products.map((product) => {
         return (
           <Product
