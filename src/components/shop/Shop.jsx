@@ -1,10 +1,9 @@
 import Product from '../product/Product';
 import PropTypes from 'prop-types';
-import { Outlet, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Food from '../food/Food';
 import Drinks from '../drinks/Drinks';
-import DefaultCategory from '../defaultCategory/DefaultCategory';
 
 const Shop = ({
   products,
