@@ -10,7 +10,7 @@
   - [ ] useMemo
   - [ ] useRef
   - [ ] useCallback
-  - [ ] useParams
+  - [x] useParams
   - [ ] useSearchParams
   - [ ] useLocation
   - [ ] \*useOutletContext
@@ -28,15 +28,15 @@
   - [x] Install
   - [x] Link element
   - [x] Nested routes
-  - [ ] Dynamic segments
-  - [ ] Outlet element
+  - [x] Dynamic segments
+  - [x] Outlet element
+  - [x] Routes file
+  - [x] Catch-all route
+    - [x] errorElement
+  - [ ] useRouteError
   - [ ] Context with Outlets
-  - [ ] Catch-all route
   - [ ] Protected routes
     - [ ] Navigate component
-  - [ ] errorElement
-  - [ ] Routes file
-  - [ ] useRouteError
 
 - \*Fetching data
 
