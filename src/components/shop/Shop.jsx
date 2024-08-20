@@ -28,6 +28,8 @@ const Shop = ({
       {category === 'food' && <Food />}
       {category === 'drinks' && <Drinks />}
 
+      {/* test */}
+
       {/* {products.map((product) => {
         return (
           <Product
