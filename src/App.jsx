@@ -1,5 +1,5 @@
 import Navigation from './components/navigation/Navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { Outlet } from 'react-router-dom';
 
@@ -62,6 +62,14 @@ function App() {
     const updatedItems = cart.filter((item) => item.id != itemToRemoveId);
     setCart(updatedItems);
   };
+
+  useEffect(() => {
+    console.log('fetching data');
+
+    fetch('https://fakestoreapi.com/products')
+      .then((res) => res.json())
+      .then((json) => console.log(json));
+  }, []);
 
   console.log('rendering App');
 
