@@ -15,6 +15,7 @@ const Shop = ({
   const { category } = useParams();
 
   console.log('rendering Shop');
+  console.log(`category: ${category}`);
 
   return (
     <>
@@ -25,13 +26,8 @@ const Shop = ({
       <div>
         <Link to="/shop/drinks">Drinks</Link>
       </div>
-      {category === 'food' ? (
-        <Food />
-      ) : category === 'drinks' ? (
-        <Drinks />
-      ) : (
-        <DefaultCategory />
-      )}
+      {category === 'food' && <Food />}
+      {category === 'drinks' && <Drinks />}
       {/* {products.map((product) => {
         return (
           <Product
