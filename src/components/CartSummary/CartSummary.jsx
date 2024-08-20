@@ -1,4 +1,5 @@
 import styles from './CartSummary.module.css';
+import PropTypes from 'prop-types';
 
 const CartSummary = ({ cart, getProductById }) => {
   console.log('rendering CartSummary');
@@ -27,6 +28,11 @@ const CartSummary = ({ cart, getProductById }) => {
       </div>
     </>
   );
+};
+
+CartSummary.propTypes = {
+  cart: PropTypes.array,
+  getProductById: PropTypes.func,
 };
 
 export default CartSummary;

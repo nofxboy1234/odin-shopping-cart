@@ -1,5 +1,4 @@
 import Navigation from './components/navigation/Navigation';
-import Content from './components/content/Content';
 import { useState } from 'react';
 import './App.css';
 import { Outlet } from 'react-router-dom';

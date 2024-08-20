@@ -1,14 +1,12 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { useOutletContext } from 'react-router-dom';
 
-const Product = ({
-  product,
-  addItemToCart,
-  updateItemInCart,
-  removeItemFromCart,
-}) => {
+const Product = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
   const [isInCart, setIsInCart] = useState(false);
+  const { addItemToCart, updateItemInCart, removeItemFromCart } =
+    useOutletContext();
 
   console.log('rendering Product');
 
@@ -57,7 +55,6 @@ const Product = ({
 
 Product.propTypes = {
   product: PropTypes.object,
-  setCart: PropTypes.func,
 };
 
 export default Product;

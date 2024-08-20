@@ -4,8 +4,7 @@ import CartSummary from '../CartSummary/CartSummary';
 import { useOutletContext } from 'react-router-dom';
 
 const Cart = () => {
-  const { cart, updateItemInCart, getProductById, removeItemFromCart } =
-    useOutletContext();
+  const { cart, getProductById } = useOutletContext();
 
   console.log('rendering Cart');
 
@@ -23,9 +22,7 @@ const Cart = () => {
               <CartItem
                 key={item.id}
                 product={getProductById(item.id)}
-                updateItemInCart={updateItemInCart}
                 initialQuantity={item.quantity}
-                removeItemFromCart={removeItemFromCart}
               />
             );
           })}

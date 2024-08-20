@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 const Drinks = () => {
   console.log('rendering Drinks');
 

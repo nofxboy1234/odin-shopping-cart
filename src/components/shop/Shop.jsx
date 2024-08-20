@@ -1,14 +1,9 @@
 import Product from '../product/Product';
-import PropTypes from 'prop-types';
 import { useOutletContext, useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import Food from '../food/Food';
-import Drinks from '../drinks/Drinks';
 
 const Shop = () => {
   const { category } = useParams();
-  const { products, addItemToCart, updateItemInCart, removeItemFromCart } =
-    useOutletContext();
+  const { products } = useOutletContext();
 
   console.log('rendering Shop');
   console.log(`category: ${category}`);
@@ -26,22 +21,10 @@ const Shop = () => {
       {category === 'drinks' && <Drinks />} */}
 
       {products.map((product) => {
-        return (
-          <Product
-            key={product.id}
-            product={product}
-            addItemToCart={addItemToCart}
-            updateItemInCart={updateItemInCart}
-            removeItemFromCart={removeItemFromCart}
-          />
-        );
+        return <Product key={product.id} product={product} />;
       })}
     </>
   );
 };
-
-// Shop.propTypes = {
-//   products: PropTypes.array,
-// };
 
 export default Shop;

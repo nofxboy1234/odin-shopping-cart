@@ -1,8 +1,6 @@
-import { useState } from 'react';
 import styles from './Navigation.module.css';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import Shop from '../shop/Shop';
 
 const Navigation = ({ cartCount }) => {
   console.log('rendering Navigation');
@@ -24,8 +22,8 @@ const Navigation = ({ cartCount }) => {
   );
 };
 
-// Navigation.propTypes = {
-//   setContentIndex: PropTypes.func.isRequired,
-// };
+Navigation.propTypes = {
+  cartCount: PropTypes.number,
+};
 
 export default Navigation;
