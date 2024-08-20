@@ -6,7 +6,6 @@ const DefaultCategory = () => {
   return (
     <>
       <h1>No such Category for the Shop!</h1>
-      <Link to="/">Click here to go back</Link>
     </>
   );
 };
