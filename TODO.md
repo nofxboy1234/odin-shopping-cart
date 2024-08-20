@@ -13,7 +13,7 @@
   - [x] useParams
   - [ ] useSearchParams
   - [ ] useLocation
-  - [ ] \*useOutletContext
+  - [x] \*useOutletContext
 
 - [ ] \*React Testing Library
 
@@ -34,7 +34,7 @@
   - [x] Catch-all route
     - [x] errorElement
   - [ ] useRouteError
-  - [ ] Context with Outlets
+  - [x] Context with Outlets
   - [ ] Protected routes
     - [ ] Navigate component
 
