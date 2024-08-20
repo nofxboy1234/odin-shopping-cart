@@ -10,6 +10,8 @@ const Product = ({
   const [quantity, setQuantity] = useState(1);
   const [isInCart, setIsInCart] = useState(false);
 
+  console.log('rendering Product');
+
   return (
     <>
       <div className="product">

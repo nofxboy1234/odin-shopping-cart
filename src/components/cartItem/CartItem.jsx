@@ -10,6 +10,8 @@ const CartItem = ({
 }) => {
   const [quantity, setQuantity] = useState(initialQuantity);
 
+  console.log('rendering CartItem');
+
   return (
     <>
       <div className="product">

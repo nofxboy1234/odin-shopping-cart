@@ -74,16 +74,16 @@ function App() {
           0
         )}
       />
-      <Outlet />
-      {/* <Content
-        contentIndex={contentIndex}
-        cart={cart}
-        products={products}
-        addItemToCart={addItemToCart}
-        updateItemInCart={updateItemInCart}
-        getProductById={getProductById}
-        removeItemFromCart={removeItemFromCart}
-      /> */}
+      <Outlet
+        context={{
+          cart,
+          products,
+          addItemToCart,
+          updateItemInCart,
+          getProductById,
+          removeItemFromCart,
+        }}
+      />
     </>
   );
 }
