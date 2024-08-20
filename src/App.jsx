@@ -25,7 +25,7 @@ const tempProducts = [
 ];
 
 function App() {
-  const [products, setProducts] = useState(tempProducts);
+  const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
 
   const getProductById = (itemId) =>
@@ -64,11 +64,22 @@ function App() {
   };
 
   useEffect(() => {
-    console.log('fetching data');
+    let ignore = false;
+    setProducts([]);
 
+    console.log('fetching data');
     fetch('https://fakestoreapi.com/products')
       .then((res) => res.json())
-      .then((json) => console.log(json));
+      .then((json) => {
+        if (!ignore) {
+          // console.log(json);
+          console.log('setting products');
+          setProducts(json);
+        }
+      });
+    return () => {
+      ignore = true;
+    };
   }, []);
 
   console.log('rendering App');
