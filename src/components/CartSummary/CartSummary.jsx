@@ -1,6 +1,8 @@
 import styles from './CartSummary.module.css';
 
 const CartSummary = ({ cart, getProductById }) => {
+  console.log('rendering CartSummary');
+
   return (
     <>
       <div className={styles.cartSummary}>
