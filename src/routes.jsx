@@ -12,10 +12,6 @@ const routes = [
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      // {
-      //   path: 'shop',
-      //   element: <Shop />,
-      // },
       {
         path: 'shop/:category?',
         element: <Shop />,
