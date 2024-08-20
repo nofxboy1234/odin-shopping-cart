@@ -12,7 +12,11 @@ const CartItem = ({ product, initialQuantity }) => {
   return (
     <>
       <div className="product">
-        <img src={product.imageUrl} alt={`image of ${product.title}`} />
+        <img
+          src={product.image}
+          alt={`image of ${product.title}`}
+          width="100px"
+        />
         <div className={styles.itemRow}>
           <div>{product.title}</div>
           <input

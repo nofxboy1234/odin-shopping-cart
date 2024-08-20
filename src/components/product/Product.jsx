@@ -13,9 +13,15 @@ const Product = ({ product }) => {
   return (
     <>
       <div className="product">
-        <img src={product.imageUrl} alt={`image of ${product.title}`} />
-        <div>{product.title}</div>
-        <div>{product.price.toFixed(2)}</div>
+        <img
+          src={product.image}
+          alt={`image of ${product.title}`}
+          width="100px"
+        />
+        <div className="product-info">
+          <div>{product.title}</div>
+          <div>{product.price.toFixed(2)}</div>
+        </div>
         <input
           type="number"
           id="quantity"

@@ -3,27 +3,6 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import { Outlet } from 'react-router-dom';
 
-const tempProducts = [
-  {
-    id: 1,
-    imageUrl: '/products/1',
-    title: 'product 1',
-    price: 10.0,
-  },
-  {
-    id: 2,
-    imageUrl: '/products/2',
-    title: 'product 2',
-    price: 20.5,
-  },
-  {
-    id: 3,
-    imageUrl: '/products/3',
-    title: 'product 3',
-    price: 139.99,
-  },
-];
-
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
