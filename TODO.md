@@ -40,7 +40,7 @@
 
 - \*Fetching data
 
-  - [ ] Fetch requests in React Components
+  - [x] Fetch requests in React Components
   - [ ] Catching and handling errors
   - [ ] Lifting requests up
   - [ ] Custom Hooks
