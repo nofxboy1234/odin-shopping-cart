@@ -33,7 +33,7 @@
   - [x] Routes file
   - [x] Catch-all route
     - [x] errorElement
-  - [ ] useRouteError
+  - [x] useRouteError
   - [x] Context with Outlets
   - [ ] Protected routes
     - [ ] Navigate component
