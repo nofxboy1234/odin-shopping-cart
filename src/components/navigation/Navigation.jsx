@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Shop from '../shop/Shop';
 
-const Navigation = ({ setContentIndex, cartCount }) => {
+const Navigation = ({ cartCount }) => {
   console.log('rendering Navigation');
 
   return (

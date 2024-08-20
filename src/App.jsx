@@ -26,7 +26,6 @@ const tempProducts = [
 ];
 
 function App() {
-  const [contentIndex, setContentIndex] = useState(0);
   const [products, setProducts] = useState(tempProducts);
   const [cart, setCart] = useState([]);
 
@@ -70,7 +69,6 @@ function App() {
   return (
     <>
       <Navigation
-        setContentIndex={setContentIndex}
         cartCount={cart.reduce(
           (total, cartItem) => total + cartItem.quantity,
           0
