@@ -61,7 +61,7 @@
   - [ ] CSS-in-js
     - [ ] styled-components
       - [ ] Install
-  - [ ] Simple black and white style / jjk image palette
+  - [x] Simple black and white style / jjk image palette
   - [ ] Chromatic Aberration
 
 - [x] img class attribute?
