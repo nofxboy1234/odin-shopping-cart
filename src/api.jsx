@@ -21,9 +21,13 @@ const useProducts = () => {
         if (!ignore) {
           console.log('setting products');
           setProducts(json);
+          setError(null);
         }
       })
-      .catch((error) => setError(error))
+      .catch((error) => {
+        setProducts([]);
+        setError(error);
+      })
       .finally(() => setLoading(false));
 
     return () => {
