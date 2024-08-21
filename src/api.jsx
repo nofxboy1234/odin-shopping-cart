@@ -12,7 +12,7 @@ const useProducts = () => {
     console.log('fetching data');
     fetch('https://fakestoreapi.com/products')
       .then((res) => {
-        if (res.status >= 400) {
+        if (!res.ok) {
           throw new Error('server error');
         }
         return res.json();
