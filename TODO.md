@@ -60,3 +60,6 @@
       - [ ] Install
   - [ ] Simple black and white style / jjk image palette
   - [ ] Chromatic Aberration
+
+- [ ] img class attribute?
+- [ ] useEffect fetchData repeat
