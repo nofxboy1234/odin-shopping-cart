@@ -12,35 +12,39 @@ const CartItem = ({ product, initialQuantity }) => {
   return (
     <>
       <div className={styles.product}>
-        <img
-          src={product.image}
-          alt={`image of ${product.title}`}
-          // width="100px"
-          className={styles.productImage}
-        />
-        <div>{product.title}</div>
-        <div>Price: {product.price.toFixed(2)}</div>
-        <input
-          type="number"
-          id="quantity"
-          min={1}
-          value={quantity}
-          onChange={(e) => {
-            const newValue = Number(e.target.value);
-            setQuantity(Number(newValue));
+        <div className={styles.infoContainer}>
+          <img
+            src={product.image}
+            alt={`image of ${product.title}`}
+            className={styles.productImage}
+          />
+          <div className={styles.title}>
+            <div>{product.title}</div>
+          </div>
+        </div>
 
-            updateItemInCart({ id: product.id, quantity: newValue });
-          }}
-        />
-        <div>{product.price.toFixed(2)}</div>
-        <div>{(quantity * product.price).toFixed(2)}</div>
-        <button
-          onClick={() => {
-            removeItemFromCart(product.id);
-          }}
-        >
-          Remove from Cart
-        </button>
+        <div className={styles.editContainer}>
+          <div>{(quantity * product.price).toFixed(2)}</div>
+          <input
+            type="number"
+            id="quantity"
+            min={1}
+            value={quantity}
+            onChange={(e) => {
+              const newValue = Number(e.target.value);
+              setQuantity(Number(newValue));
+
+              updateItemInCart({ id: product.id, quantity: newValue });
+            }}
+          />
+          <button
+            onClick={() => {
+              removeItemFromCart(product.id);
+            }}
+          >
+            Remove from Cart
+          </button>
+        </div>
       </div>
     </>
   );
