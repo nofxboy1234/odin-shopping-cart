@@ -42,13 +42,13 @@
 
   - [x] Fetch requests in React Components
   - [x] Catching and handling errors
-  - [ ] Lifting requests up
-  - [ ] Custom Hooks
-  - [ ] Managing multiple fetch requests
+  - [x] Custom Hooks
   - [x] Request states
     - [x] Data
     - [x] Loading
     - [x] Error
+  - [ ] Managing multiple fetch requests
+    - [ ] Lifting requests up
   - [ ] Performance patterns
 
 - \*Styling
