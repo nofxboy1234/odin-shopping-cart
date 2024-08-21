@@ -8,12 +8,16 @@ const getRequestWithNativeFetch = async (url) => {
 
 // const getRequestWithNativeFetch = (url) => {
 //   return new Promise((resolve, reject) => {
-//     fetch(url).then((res) => {
-//       if (!res.ok) {
-//         reject(new Error('server error'));
-//       }
-//       resolve(res.json());
-//     });
+//     fetch(url)
+//       .then((res) => {
+//         if (!res.ok) {
+//           reject(new Error('server error'));
+//         }
+//         resolve(res.json());
+//       })
+//       .catch((error) => {
+//         reject(error);
+//       });
 //   });
 // };
 

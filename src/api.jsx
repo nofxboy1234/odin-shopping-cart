@@ -11,6 +11,7 @@ const useProducts = () => {
     setLoading(true);
 
     console.log('fetching data');
+    // getRequestWithNativeFetch('https://sidfjhsdjkfhjdshfjsdhfjd')
     getRequestWithNativeFetch('https://fakestoreapi.com/products')
       .then((json) => {
         if (!ignore) {
