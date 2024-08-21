@@ -1,5 +1,7 @@
-const getRequestWithNativeFetch = async (url) => {
-  const res = await fetch(url);
+const getRequestWithNativeFetch = async (url, signal = null) => {
+  console.log('fetching data');
+
+  const res = await fetch(url, { signal });
   if (!res.ok) {
     throw new Error('server error');
   }

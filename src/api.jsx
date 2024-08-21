@@ -7,27 +7,32 @@ const useProducts = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    let ignore = false;
+    const controller = new AbortController();
     setLoading(true);
 
-    console.log('fetching data');
     // getRequestWithNativeFetch('https://sidfjhsdjkfhjdshfjsdhfjd')
-    getRequestWithNativeFetch('https://fakestoreapi.com/products')
+    getRequestWithNativeFetch(
+      'https://fakestoreapi.com/products',
+      controller.signal
+    )
       .then((json) => {
-        if (!ignore) {
-          console.log('setting products');
-          setProducts(json);
-          setError(null);
-        }
+        console.log('setting products');
+        setProducts(json);
+        setError(null);
       })
       .catch((error) => {
+        if (error.name === 'AbortError') {
+          console.log('Aborted fetching of Products');
+          return;
+        }
+
         setProducts([]);
         setError(error);
       })
       .finally(() => setLoading(false));
 
     return () => {
-      ignore = true;
+      controller.abort();
     };
   }, []);
 
