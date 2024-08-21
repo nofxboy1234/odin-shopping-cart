@@ -2,7 +2,7 @@ import Navigation from './components/navigation/Navigation';
 import { useState } from 'react';
 import './App.css';
 import { Outlet } from 'react-router-dom';
-import useProducts from './api';
+import useProducts from './api/products';
 
 function App() {
   const [cart, setCart] = useState([]);
