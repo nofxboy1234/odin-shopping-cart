@@ -7,6 +7,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const getProductById = (itemId) =>
     products.find((product) => product.id === itemId);
@@ -61,7 +62,8 @@ function App() {
           setProducts(json);
         }
       })
-      .catch((error) => setError(error));
+      .catch((error) => setError(error))
+      .finally(() => setLoading(false));
 
     return () => {
       ignore = true;
@@ -70,6 +72,7 @@ function App() {
 
   console.log('rendering App');
 
+  if (loading) return <p>Loading...</p>;
   if (error) return <p>A network error was encountered</p>;
 
   return (
