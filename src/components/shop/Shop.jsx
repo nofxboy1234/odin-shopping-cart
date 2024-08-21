@@ -11,7 +11,7 @@ const Shop = () => {
 
   return (
     <>
-      <h1 className={styles.shopHeading}>Shop</h1>
+      <h1 className={styles.heading}>Shop</h1>
       {/* <div>
         <Link to="/shop/food">Food</Link>
       </div>

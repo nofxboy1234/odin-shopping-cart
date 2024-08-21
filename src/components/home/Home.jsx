@@ -5,7 +5,7 @@ const Home = () => {
 
   return (
     <>
-      <h1 className={styles.homeHeading}>Welcome to Shopping Cart!</h1>
+      <h1 className={styles.heading}>Welcome to Shopping Cart!</h1>
     </>
   );
 };
