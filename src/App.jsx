@@ -6,6 +6,7 @@ import { Outlet } from 'react-router-dom';
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
+  const [error, setError] = useState(null);
 
   const getProductById = (itemId) =>
     products.find((product) => product.id === itemId);
@@ -48,20 +49,28 @@ function App() {
 
     console.log('fetching data');
     fetch('https://fakestoreapi.com/products')
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.status >= 400) {
+          throw new Error('server error');
+        }
+        return res.json();
+      })
       .then((json) => {
         if (!ignore) {
-          // console.log(json);
           console.log('setting products');
           setProducts(json);
         }
-      });
+      })
+      .catch((error) => setError(error));
+
     return () => {
       ignore = true;
     };
   }, []);
 
   console.log('rendering App');
+
+  if (error) return <p>A network error was encountered</p>;
 
   return (
     <>
