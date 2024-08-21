@@ -5,9 +5,9 @@
 
 .navLink {
   padding: 0.5rem;
-  border: 1px solid black;
+  border: 1px solid rgb(240, 240, 240);
 }
 
 .navLink:hover {
-  box-shadow: 0px 0px 0px 4px black;
+  border: 1px solid rgb(196, 196, 196);
 }
