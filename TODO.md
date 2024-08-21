@@ -47,6 +47,9 @@
     - [x] Data
     - [x] Loading
     - [x] Error
+  - [x] Fix useEffect race condition
+    - [x] 'ignore' flag
+    - [x] AbortController
   - [ ] Managing multiple fetch requests
     - [x] Lifting requests up
   - [ ] Performance patterns
