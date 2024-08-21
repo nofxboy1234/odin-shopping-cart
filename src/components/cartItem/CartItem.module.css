@@ -1,5 +1,26 @@
-.itemRow {
+.product {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.1rem;
   padding: 1rem;
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  height: 400px;
+}
+
+.product:hover {
+  border: 1px solid rgb(196, 196, 196);
+}
+
+.productImage {
+  margin: 1rem;
+}
+
+.product > button {
+  padding: 8px;
+  width: 230px;
 }

@@ -3,11 +3,15 @@
   justify-content: center;
 }
 
-.cart {
+.cartContainer {
   display: flex;
+  justify-content: center;
+  background-color: rgb(248, 248, 248);
+  padding: 1rem;
 }
 
-.cartItems {
+.cart {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }

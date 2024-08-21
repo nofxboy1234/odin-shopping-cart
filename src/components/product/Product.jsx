@@ -14,8 +14,6 @@ const Product = ({ product }) => {
   return (
     <>
       <div className={styles.product}>
-        {/* <div className={styles.productContent}>
-          </div> */}
         <img
           src={product.image}
           alt={`image of ${product.title}`}

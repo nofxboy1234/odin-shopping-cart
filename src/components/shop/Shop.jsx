@@ -11,7 +11,6 @@ const Shop = () => {
 
   return (
     <>
-      <h1 className={styles.heading}>Shop</h1>
       {/* <div>
         <Link to="/shop/food">Food</Link>
       </div>
@@ -20,7 +19,7 @@ const Shop = () => {
       </div> */}
       {/* {category === 'food' && <Food />}
       {category === 'drinks' && <Drinks />} */}
-
+      <h1 className={styles.heading}>Shop</h1>
       <div className={styles.shopContainer}>
         <div className={styles.shop}>
           {products.map((product) => {
