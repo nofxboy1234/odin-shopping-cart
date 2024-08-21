@@ -48,7 +48,7 @@
     - [x] Loading
     - [x] Error
   - [ ] Managing multiple fetch requests
-    - [ ] Lifting requests up
+    - [x] Lifting requests up
   - [ ] Performance patterns
 
 - \*Styling
