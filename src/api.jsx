@@ -7,7 +7,7 @@ const useProducts = () => {
 
   useEffect(() => {
     let ignore = false;
-    setProducts([]);
+    setLoading(true);
 
     console.log('fetching data');
     fetch('https://fakestoreapi.com/products')
