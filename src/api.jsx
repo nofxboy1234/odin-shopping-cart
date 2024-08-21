@@ -11,12 +11,6 @@ const useProducts = () => {
     setLoading(true);
 
     console.log('fetching data');
-    // fetch('https://fakestoreapi.com/products').then((res) => {
-    //   if (!res.ok) {
-    //     throw new Error('server error');
-    //   }
-    //   return res.json();
-    // });
     getRequestWithNativeFetch('https://fakestoreapi.com/products')
       .then((json) => {
         if (!ignore) {

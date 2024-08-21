@@ -9,13 +9,4 @@ const getRequestWithNativeFetch = (url) => {
   });
 };
 
-// const getRequestWithNativeFetch = (url) => {
-//   fetch(url).then((res) => {
-//     if (!res.ok) {
-//       throw new Error('server error');
-//     }
-//     return res.json();
-//   });
-// };
-
 export default getRequestWithNativeFetch;
