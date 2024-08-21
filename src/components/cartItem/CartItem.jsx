@@ -15,7 +15,7 @@ const CartItem = ({ product, initialQuantity }) => {
         <img
           src={product.image}
           alt={`image of ${product.title}`}
-          width="100px"
+          // width="100px"
           className={styles.productImage}
         />
         <div>{product.title}</div>

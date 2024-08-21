@@ -1,6 +1,5 @@
 .product {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: 0.1rem;
@@ -18,6 +17,7 @@
 
 .productImage {
   margin: 1rem;
+  width: 80px;
 }
 
 .product > button {

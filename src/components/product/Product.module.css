@@ -18,6 +18,7 @@
 
 .productImage {
   margin: 1rem;
+  width: 100px;
 }
 
 .product > button {
