@@ -1,0 +1,15 @@
+.shopHeading {
+  display: flex;
+  justify-content: center;
+}
+
+.shopContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.shop {
+  display: grid;
+  grid-template-columns: 300px 300px 300px 300px;
+  gap: 2rem;
+}

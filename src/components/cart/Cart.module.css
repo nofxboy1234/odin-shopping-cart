@@ -1,3 +1,8 @@
+.cartHeading {
+  display: flex;
+  justify-content: center;
+}
+
 .cart {
   display: flex;
 }

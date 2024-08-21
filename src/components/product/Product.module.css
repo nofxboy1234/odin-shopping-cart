@@ -1,0 +1,26 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  /* margin: 1rem; */
+  /* width: 250px;
+  height: 300px; */
+}
+
+.product:hover {
+  box-shadow: 0px 0px 0px 4px black;
+}
+
+.productContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.productImage {
+  margin: 1rem;
+}

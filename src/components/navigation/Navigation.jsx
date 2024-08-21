@@ -8,15 +8,15 @@ const Navigation = ({ cartCount }) => {
   return (
     <>
       <nav className={styles.navigation}>
-        <div className="nav-link">
-          <Link to="/">Home</Link>
-        </div>
-        <div className="nav-link">
-          <Link to="shop">Shop</Link>
-        </div>
-        <div className="nav-link">
-          <Link to="cart">Cart ({cartCount})</Link>
-        </div>
+        <Link to="/" className={styles.navLink}>
+          Home
+        </Link>
+        <Link to="shop" className={styles.navLink}>
+          Shop
+        </Link>
+        <Link to="cart" className={styles.navLink}>
+          Cart ({cartCount})
+        </Link>
       </nav>
     </>
   );

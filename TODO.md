@@ -64,5 +64,6 @@
   - [ ] Simple black and white style / jjk image palette
   - [ ] Chromatic Aberration
 
-- [ ] img class attribute?
-- [ ] useEffect fetchData repeat
+- [x] img class attribute?
+- [x] useEffect fetchData repeat
+- [ ] Set Product quantity to 1 if 0 is typed in

@@ -9,12 +9,12 @@ const Cart = () => {
   console.log('rendering Cart');
 
   if (cart.length === 0) {
-    return <h1>Your shopping cart is empty</h1>;
+    return <h1 className={styles.cartHeading}>Your shopping cart is empty</h1>;
   }
 
   return (
     <>
-      <h1>Cart</h1>
+      <h1 className={styles.cartHeading}>Cart</h1>
       <div className={styles.cart}>
         <div className={styles.cartItems}>
           {cart.map((item) => {
