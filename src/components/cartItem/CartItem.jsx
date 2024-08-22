@@ -67,7 +67,6 @@ const CartItem = ({ product }) => {
 
 CartItem.propTypes = {
   product: PropTypes.object,
-  initialQuantity: PropTypes.number,
 };
 
 export default CartItem;
