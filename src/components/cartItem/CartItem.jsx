@@ -32,6 +32,8 @@ const CartItem = ({ product, initialQuantity }) => {
             value={quantity}
             onChange={(e) => {
               const newValue = Number(e.target.value);
+              if (newValue === 0) return;
+
               setQuantity(newValue);
 
               updateItemInCart({ id: product.id, quantity: newValue });
