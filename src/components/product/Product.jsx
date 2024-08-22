@@ -8,7 +8,7 @@ const Product = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
   const { updateProduct } = useOutletContext();
 
-  const addProductToCart = (newQuantity) => {
+  const updateProductQuantityInCart = (newQuantity) => {
     updateProduct({
       ...product,
       quantity: newQuantity,
@@ -45,7 +45,7 @@ const Product = ({ product }) => {
             setQuantity(newQuantity);
 
             if (linkedToCart) {
-              addProductToCart(newQuantity);
+              updateProductQuantityInCart(newQuantity);
             }
           }}
         />
@@ -59,7 +59,7 @@ const Product = ({ product }) => {
               setLinkedToCart(true);
               const newQuantity = quantity + product.quantity;
               setQuantity(newQuantity);
-              addProductToCart(newQuantity);
+              updateProductQuantityInCart(newQuantity);
             }
           }}
         >

@@ -7,7 +7,7 @@ const CartItem = ({ product }) => {
   const [quantity, setQuantity] = useState(product.quantity);
   const { updateProduct } = useOutletContext();
 
-  const updateProductInCart = (newQuantity) => {
+  const updateProductQuantityInCart = (newQuantity) => {
     updateProduct({
       ...product,
       quantity: newQuantity,
@@ -49,8 +49,7 @@ const CartItem = ({ product }) => {
               if (newQuantity === 0) return;
 
               setQuantity(newQuantity);
-
-              updateProductInCart(newQuantity);
+              updateProductQuantityInCart(newQuantity);
             }}
           />
           <button

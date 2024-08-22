@@ -7,15 +7,15 @@ function App() {
   const { products, setProducts, error, loading } = useProducts();
 
   const updateProduct = (updatedProduct) => {
-    setProducts(
-      products.map((product) => {
-        if (product.id === updatedProduct.id) {
-          return updatedProduct;
-        } else {
-          return product;
-        }
-      })
-    );
+    const updatedProducts = products.map((product) => {
+      if (product.id === updatedProduct.id) {
+        return updatedProduct;
+      } else {
+        return product;
+      }
+    });
+
+    setProducts(updatedProducts);
   };
 
   console.log('rendering App');
