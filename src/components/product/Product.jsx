@@ -28,7 +28,9 @@ const Product = ({ product }) => {
           value={quantity}
           onChange={(e) => {
             const newValue = Number(e.target.value);
-            setQuantity(Number(newValue));
+            if (newValue === 0) return;
+
+            setQuantity(newValue);
 
             if (isInCart) {
               updateItemInCart({ id: product.id, quantity: newValue });

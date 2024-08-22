@@ -32,7 +32,7 @@ const CartItem = ({ product, initialQuantity }) => {
             value={quantity}
             onChange={(e) => {
               const newValue = Number(e.target.value);
-              setQuantity(Number(newValue));
+              setQuantity(newValue);
 
               updateItemInCart({ id: product.id, quantity: newValue });
             }}
