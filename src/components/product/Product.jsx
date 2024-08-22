@@ -4,10 +4,23 @@ import { useOutletContext } from 'react-router-dom';
 import styles from './Product.module.css';
 
 const Product = ({ product }) => {
+  const [linkedToCart, setLinkedToCart] = useState(false);
   const [quantity, setQuantity] = useState(1);
-  const [isInCart, setIsInCart] = useState(false);
-  const { addItemToCart, updateItemInCart, removeItemFromCart } =
-    useOutletContext();
+  const { updateProduct } = useOutletContext();
+
+  const addProductToCart = (newQuantity) => {
+    updateProduct({
+      ...product,
+      quantity: newQuantity,
+    });
+  };
+
+  const removeProductFromCart = () => {
+    updateProduct({
+      ...product,
+      quantity: 0,
+    });
+  };
 
   console.log('rendering Product');
 
@@ -27,33 +40,30 @@ const Product = ({ product }) => {
           min={1}
           value={quantity}
           onChange={(e) => {
-            const newValue = Number(e.target.value);
-            if (newValue === 0) return;
+            const newQuantity = Number(e.target.value);
+            if (newQuantity === 0) return;
+            setQuantity(newQuantity);
 
-            setQuantity(newValue);
-
-            if (isInCart) {
-              updateItemInCart({ id: product.id, quantity: newValue });
+            if (linkedToCart) {
+              addProductToCart(newQuantity);
             }
           }}
         />
         <button
           onClick={() => {
-            if (isInCart) {
-              removeItemFromCart(product.id);
-              setIsInCart(false);
+            if (linkedToCart) {
+              setLinkedToCart(false);
               setQuantity(1);
+              removeProductFromCart();
             } else {
-              const quantityInCart = addItemToCart({
-                id: product.id,
-                quantity: quantity,
-              });
-              setIsInCart(true);
-              setQuantity(quantityInCart);
+              setLinkedToCart(true);
+              const newQuantity = quantity + product.quantity;
+              setQuantity(newQuantity);
+              addProductToCart(newQuantity);
             }
           }}
         >
-          {isInCart ? 'Remove from Cart' : 'Add to Cart'}
+          {linkedToCart ? 'Remove from Cart' : 'Add to Cart'}
         </button>
       </div>
     </>

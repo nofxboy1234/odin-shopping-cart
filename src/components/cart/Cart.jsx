@@ -4,7 +4,9 @@ import CartSummary from '../CartSummary/CartSummary';
 import { useOutletContext } from 'react-router-dom';
 
 const Cart = () => {
-  const { cart, getProductById } = useOutletContext();
+  const { products } = useOutletContext();
+
+  const cart = products.filter((product) => product.quantity > 0);
 
   console.log('rendering Cart');
 
@@ -17,17 +19,11 @@ const Cart = () => {
       <h1 className={styles.heading}>Cart</h1>
       <div className={styles.cartContainer}>
         <div className={styles.cart}>
-          {cart.map((item) => {
-            return (
-              <CartItem
-                key={item.id}
-                product={getProductById(item.id)}
-                initialQuantity={item.quantity}
-              />
-            );
+          {cart.map((product) => {
+            return <CartItem key={product.id} product={product} />;
           })}
         </div>
-        <CartSummary cart={cart} getProductById={getProductById} />
+        <CartSummary cart={cart} />
       </div>
     </>
   );

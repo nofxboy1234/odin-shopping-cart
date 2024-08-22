@@ -3,9 +3,23 @@ import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import styles from './CartItem.module.css';
 
-const CartItem = ({ product, initialQuantity }) => {
-  const [quantity, setQuantity] = useState(initialQuantity);
-  const { updateItemInCart, removeItemFromCart } = useOutletContext();
+const CartItem = ({ product }) => {
+  const [quantity, setQuantity] = useState(product.quantity);
+  const { updateProduct } = useOutletContext();
+
+  const updateProductInCart = (newQuantity) => {
+    updateProduct({
+      ...product,
+      quantity: newQuantity,
+    });
+  };
+
+  const removeProductFromCart = () => {
+    updateProduct({
+      ...product,
+      quantity: 0,
+    });
+  };
 
   console.log('rendering CartItem');
 
@@ -31,17 +45,17 @@ const CartItem = ({ product, initialQuantity }) => {
             min={1}
             value={quantity}
             onChange={(e) => {
-              const newValue = Number(e.target.value);
-              if (newValue === 0) return;
+              const newQuantity = Number(e.target.value);
+              if (newQuantity === 0) return;
 
-              setQuantity(newValue);
+              setQuantity(newQuantity);
 
-              updateItemInCart({ id: product.id, quantity: newValue });
+              updateProductInCart(newQuantity);
             }}
           />
           <button
             onClick={() => {
-              removeItemFromCart(product.id);
+              removeProductFromCart();
             }}
           >
             Remove from Cart

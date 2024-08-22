@@ -1,7 +1,7 @@
 import styles from './CartSummary.module.css';
 import PropTypes from 'prop-types';
 
-const CartSummary = ({ cart, getProductById }) => {
+const CartSummary = ({ cart }) => {
   console.log('rendering CartSummary');
 
   return (
@@ -9,15 +9,13 @@ const CartSummary = ({ cart, getProductById }) => {
       <div className={styles.cartSummary}>
         <div>Cart Summary</div>
         <div>
-          Total: (
-          {cart.reduce((total, cartItem) => total + cartItem.quantity, 0)}{' '}
+          Total: ({cart.reduce((total, product) => total + product.quantity, 0)}{' '}
           items)
         </div>
         <div>
           {cart
-            .reduce((total, cartItem) => {
-              const subTotal =
-                cartItem.quantity * getProductById(cartItem.id).price;
+            .reduce((total, product) => {
+              const subTotal = product.quantity * product.price;
               return total + subTotal;
             }, 0)
             .toFixed(2)}

@@ -17,7 +17,7 @@ const useProducts = () => {
     )
       .then((json) => {
         console.log('setting products');
-        setProducts(json);
+        setProducts(json.map((product) => ({ ...product, quantity: 0 })));
         setError(null);
       })
       .catch((error) => {
@@ -36,7 +36,7 @@ const useProducts = () => {
     };
   }, []);
 
-  return { products, error, loading };
+  return { products, setProducts, error, loading };
 };
 
 export default useProducts;
