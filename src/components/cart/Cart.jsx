@@ -1,6 +1,7 @@
 import CartItem from '../cartItem/CartItem';
 import styles from './Cart.module.css';
 import CartSummary from '../CartSummary/CartSummary';
+import Button from '../styledButton/StyledButton';
 import { useOutletContext } from 'react-router-dom';
 
 const Cart = () => {
@@ -17,6 +18,7 @@ const Cart = () => {
   return (
     <>
       <h1 className={styles.heading}>Cart</h1>
+      <Button>I'm a Button</Button>
       <div className={styles.cartContainer}>
         <div className={styles.cart}>
           {cart.map((product) => {
