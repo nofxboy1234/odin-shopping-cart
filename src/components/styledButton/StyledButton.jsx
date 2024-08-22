@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Button = styled.button`
   background: transparent;
@@ -7,6 +7,13 @@ const Button = styled.button`
   color: #bf4f74;
   margin: 0 1em;
   padding: 0.25em 1em;
+
+  ${(props) =>
+    props.primary &&
+    css`
+      background: #bf4f74;
+      color: white;
+    `}
 `;
 
 export default Button;

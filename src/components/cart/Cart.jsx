@@ -18,7 +18,7 @@ const Cart = () => {
   return (
     <>
       <h1 className={styles.heading}>Cart</h1>
-      <Button>I'm a Button</Button>
+      <Button primary={true}>I'm a Button</Button>
       <div className={styles.cartContainer}>
         <div className={styles.cart}>
           {cart.map((product) => {
