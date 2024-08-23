@@ -8,8 +8,8 @@ const Button = styled.button`
   margin: 0 1em;
   padding: 0.25em 1em;
 
-  ${(props) =>
-    props.primary &&
+  ${({ primary }) =>
+    primary &&
     css`
       background: #bf4f74;
       color: white;
