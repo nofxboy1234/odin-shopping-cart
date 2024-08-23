@@ -5,7 +5,9 @@ const Home = () => {
   return (
     <>
       <h1 className={styles.heading}>Welcome to Shopping Cart!</h1>
-      <Button $primary={true}>I'm a Button</Button>
+      <Button $primary={true} onClick={() => console.log('Button!')}>
+        I'm a Button
+      </Button>
     </>
   );
 };
