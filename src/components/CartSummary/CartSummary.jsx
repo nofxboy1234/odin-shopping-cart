@@ -2,8 +2,6 @@ import styles from './CartSummary.module.css';
 import PropTypes from 'prop-types';
 
 const CartSummary = ({ cart }) => {
-  console.log('rendering CartSummary');
-
   return (
     <>
       <div className={styles.cartSummary}>

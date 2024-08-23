@@ -22,8 +22,6 @@ const Product = ({ product }) => {
     });
   };
 
-  console.log('rendering Product');
-
   return (
     <>
       <div className={styles.product}>

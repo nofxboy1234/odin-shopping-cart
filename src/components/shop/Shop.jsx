@@ -6,9 +6,6 @@ const Shop = () => {
   const { category } = useParams();
   const { products } = useOutletContext();
 
-  console.log('rendering Shop');
-  console.log(`category: ${category}`);
-
   return (
     <>
       {/* <div>

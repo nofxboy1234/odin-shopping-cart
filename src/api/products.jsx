@@ -16,13 +16,11 @@ const useProducts = () => {
       controller.signal
     )
       .then((json) => {
-        console.log('setting products');
         setProducts(json.map((product) => ({ ...product, quantity: 0 })));
         setError(null);
       })
       .catch((error) => {
         if (error.name === 'AbortError') {
-          console.log('Aborted fetching of Products');
           return;
         }
 

@@ -8,12 +8,16 @@ const Button = styled.button`
   margin: 0 1em;
   padding: 0.25em 1em;
 
-  ${({ primary }) =>
-    primary &&
+  ${(props) =>
+    props.$primary &&
     css`
       background: #bf4f74;
       color: white;
     `}
 `;
+
+Button.defaultProps = {
+  $primary: false,
+};
 
 export default Button;

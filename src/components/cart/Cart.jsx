@@ -8,8 +8,6 @@ const Cart = () => {
 
   const cart = products.filter((product) => product.quantity > 0);
 
-  console.log('rendering Cart');
-
   if (cart.length === 0) {
     return <h1 className={styles.heading}>Your shopping cart is empty</h1>;
   }

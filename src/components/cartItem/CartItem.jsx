@@ -21,8 +21,6 @@ const CartItem = ({ product }) => {
     });
   };
 
-  console.log('rendering CartItem');
-
   return (
     <>
       <div className={styles.product}>
