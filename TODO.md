@@ -17,6 +17,8 @@
 
 - [ ] \*React Testing Library
 
+  - [ ] createMemoryRouter
+
   - [x] Install
 
 - [x] \*propTypes
