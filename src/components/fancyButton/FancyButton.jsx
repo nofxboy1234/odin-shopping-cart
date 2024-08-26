@@ -40,3 +40,4 @@ TomatoButton.propTypes = {
 
 export default FancyButton;
 export { TomatoButton };
+// export { FancyButton as default, TomatoButton };
