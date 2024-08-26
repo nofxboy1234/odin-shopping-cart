@@ -40,7 +40,7 @@ const Home = () => {
         Custom Button with Normal Button styles
       </PolyButton>
 
-      <CustomLink>Unstyled, boring CustomLink</CustomLink>
+      <CustomLink href={'#'}>Unstyled, boring CustomLink</CustomLink>
       <br />
       <StyledCustomLink>Styled, exciting CustomLink</StyledCustomLink>
     </>
