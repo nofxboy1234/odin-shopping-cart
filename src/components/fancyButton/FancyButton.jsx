@@ -30,5 +30,13 @@ FancyButton.propTypes = {
   $primary: PropTypes.bool,
 };
 
+TomatoButton.defaultProps = {
+  $primary: false,
+};
+
+TomatoButton.propTypes = {
+  $primary: PropTypes.bool,
+};
+
 export default FancyButton;
 export { TomatoButton };
