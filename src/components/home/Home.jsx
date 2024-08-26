@@ -16,6 +16,7 @@ const Home = () => {
       <FancyButton>Normal</FancyButton>
       <FancyButton $primary={true}>Primary</FancyButton>
       <TomatoButton>Tomato Button</TomatoButton>
+      <TomatoButton $primary>Tomato Button</TomatoButton>
     </>
   );
 };
