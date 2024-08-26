@@ -4,6 +4,7 @@ import { Wrapper, Title } from '../wrapperTitle/WrapperTitle';
 import FancyButton, { TomatoButton } from '../fancyButton/FancyButton';
 import PolyButton, {
   TomatoButton as PolyTomatoButton,
+  ReversedButton,
 } from '../polymorphicProp/PolymorphicProp';
 
 const Home = () => {
@@ -28,9 +29,13 @@ const Home = () => {
       <PolyButton as="a" href="#">
         Link with Button styles
       </PolyButton>
-      <PolyTomatoButton as="a" href="#">
+      <PolyTomatoButton as={'a'} href="#">
         Link with Tomato Button styles
       </PolyTomatoButton>
+
+      <Button as={ReversedButton}>
+        Custom Button with Normal Button styles
+      </Button>
     </>
   );
 };

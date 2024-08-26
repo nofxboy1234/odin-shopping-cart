@@ -17,5 +17,13 @@ const TomatoButton = styled(Button)`
   border-color: tomato;
 `;
 
+const ReversedButton = (props) => (
+  <Button {...props}>{props.children.split('').reverse()}</Button>
+);
+
+ReversedButton.propTypes = {
+  children: PropTypes.string,
+};
+
 export default Button;
-export { TomatoButton };
+export { TomatoButton, ReversedButton };
