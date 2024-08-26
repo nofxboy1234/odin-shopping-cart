@@ -14,7 +14,7 @@ const Home = () => {
         <Title>Hello World!</Title>
       </Wrapper>
       <FancyButton>Normal</FancyButton>
-      <FancyButton $primary>Primary</FancyButton>
+      <FancyButton $primary={true}>Primary</FancyButton>
     </>
   );
 };
