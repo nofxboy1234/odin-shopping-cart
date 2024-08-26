@@ -6,6 +6,9 @@ import PolyButton, {
   TomatoButton as PolyTomatoButton,
   ReversedButton,
 } from '../polymorphicProp/PolymorphicProp';
+import StyledCustomLink, {
+  CustomLink,
+} from '../styledCusomComponent/StyledCustomComponent';
 
 const Home = () => {
   return (
@@ -36,6 +39,10 @@ const Home = () => {
       <PolyButton as={ReversedButton}>
         Custom Button with Normal Button styles
       </PolyButton>
+
+      <CustomLink>Unstyled, boring CustomLink</CustomLink>
+      <br />
+      <StyledCustomLink>Styled, exciting CustomLink</StyledCustomLink>
     </>
   );
 };
