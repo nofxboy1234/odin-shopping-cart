@@ -16,7 +16,9 @@ const TomatoButton = styled(FancyButton)`
   color: tomato;
   border-color: tomato;
 
-  background: ${(props) => (props.$primary ? 'tomato' : 'white')};
+  background: ${(props) => {
+    return props.$primary ? 'tomato' : 'white';
+  }};
   color: ${(props) => (props.$primary ? 'white' : 'tomato')};
 `;
 
