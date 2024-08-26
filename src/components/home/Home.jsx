@@ -1,6 +1,7 @@
 import styles from './Home.module.css';
 import Button from '../styledButton/StyledButton';
 import { Wrapper, Title } from '../wrapperTitle/WrapperTitle';
+import FancyButton from '../fancyButton/FancyButton';
 
 const Home = () => {
   return (
@@ -12,6 +13,8 @@ const Home = () => {
       <Wrapper>
         <Title>Hello World!</Title>
       </Wrapper>
+      <FancyButton>Normal</FancyButton>
+      <FancyButton $primary>Primary</FancyButton>
     </>
   );
 };
