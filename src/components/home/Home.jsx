@@ -42,7 +42,9 @@ const Home = () => {
 
       <CustomLink href={'#'}>Unstyled, boring CustomLink</CustomLink>
       <br />
-      <StyledCustomLink>Styled, exciting CustomLink</StyledCustomLink>
+      <StyledCustomLink href={'#'} greeting={'hello'}>
+        Styled, exciting CustomLink
+      </StyledCustomLink>
     </>
   );
 };

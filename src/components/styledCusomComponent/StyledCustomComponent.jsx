@@ -10,6 +10,7 @@ const CustomLink = ({ className, children, href }) => (
 const StyledCustomLink = styled(CustomLink)`
   color: #bf4f74;
   font-weight: bold;
+  ${(props) => console.log(props.greeting)}
 `;
 
 CustomLink.propTypes = {
