@@ -12,6 +12,10 @@ const FancyButton = styled.button`
   border-radius: 3px;
 `;
 
+FancyButton.defaultProps = {
+  $primary: false,
+};
+
 FancyButton.propTypes = {
   $primary: PropTypes.bool,
 };
