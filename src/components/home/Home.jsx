@@ -1,7 +1,7 @@
 import styles from './Home.module.css';
 import Button from '../styledButton/StyledButton';
 import { Wrapper, Title } from '../wrapperTitle/WrapperTitle';
-import FancyButton from '../fancyButton/FancyButton';
+import FancyButton, { TomatoButton } from '../fancyButton/FancyButton';
 
 const Home = () => {
   return (
@@ -15,6 +15,7 @@ const Home = () => {
       </Wrapper>
       <FancyButton>Normal</FancyButton>
       <FancyButton $primary={true}>Primary</FancyButton>
+      <TomatoButton>Tomato Button</TomatoButton>
     </>
   );
 };

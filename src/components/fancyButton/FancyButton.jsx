@@ -12,6 +12,11 @@ const FancyButton = styled.button`
   border-radius: 3px;
 `;
 
+const TomatoButton = styled(FancyButton)`
+  color: tomato;
+  border-color: tomato;
+`;
+
 FancyButton.defaultProps = {
   $primary: false,
 };
@@ -21,3 +26,4 @@ FancyButton.propTypes = {
 };
 
 export default FancyButton;
+export { TomatoButton };
