@@ -33,9 +33,9 @@ const Home = () => {
         Link with Tomato Button styles
       </PolyTomatoButton>
 
-      <Button as={ReversedButton}>
+      <PolyButton as={ReversedButton}>
         Custom Button with Normal Button styles
-      </Button>
+      </PolyButton>
     </>
   );
 };
