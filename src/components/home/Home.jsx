@@ -25,7 +25,7 @@ const Home = () => {
       <TomatoButton>Tomato Button</TomatoButton>
       <TomatoButton $primary>Tomato Button</TomatoButton>
 
-      <PolyButton>Normal Button</PolyButton>
+      <PolyButton>Normal PolyButton</PolyButton>
       <PolyButton as="a" href="#">
         Link with Button styles
       </PolyButton>
