@@ -11,6 +11,7 @@ import StyledCustomLink, {
 } from '../styledCusomComponent/StyledCustomComponent';
 import Input, { PasswordInput } from '../styledComponentsAttrs/input';
 import Rotate from '../rotate/Rotate';
+import Thing from '../thing/Thing';
 
 const Home = () => {
   return (
@@ -58,7 +59,8 @@ const Home = () => {
       <Input placeholder="A bigger text input" $size="2em" />
       <br />
       <PasswordInput placeholder="A bigger password input" $size="2em" /> */}
-      <Rotate>&lt; - &gt; </Rotate>
+      {/* <Rotate>&lt; - &gt; </Rotate> */}
+      <Thing>Hello world!</Thing>
     </>
   );
 };
