@@ -9,7 +9,7 @@ import PolyButton, {
 import StyledCustomLink, {
   CustomLink,
 } from '../styledCusomComponent/StyledCustomComponent';
-import Input from '../styledComponentsAttrs/input';
+import Input, { PasswordInput } from '../styledComponentsAttrs/input';
 
 const Home = () => {
   return (
@@ -55,6 +55,8 @@ const Home = () => {
       <Input placeholder="A small text input" />
       <br />
       <Input placeholder="A bigger text input" $size="2em" />
+      <br />
+      <PasswordInput placeholder="A bigger password input" $size="2em" />
     </>
   );
 };

@@ -14,8 +14,15 @@ const Input = styled.input.attrs((props) => ({
   padding: ${(props) => props.$size};
 `;
 
+const PasswordInput = styled(Input).attrs({
+  type: 'password',
+})`
+  border: 2px solid aqua;
+`;
+
 Input.propTypes = {
   $size: PropTypes.string,
 };
 
 export default Input;
+export { PasswordInput };
