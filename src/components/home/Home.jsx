@@ -9,12 +9,12 @@ import PolyButton, {
 import StyledCustomLink, {
   CustomLink,
 } from '../styledCusomComponent/StyledCustomComponent';
-import Input from '../input/Input';
+import Input from '../styledComponentsAttrs/input';
 
 const Home = () => {
   return (
     <>
-      <h1 className={styles.heading}>Welcome to Shopping Cart!</h1>
+      {/* <h1 className={styles.heading}>Welcome to Shopping Cart!</h1>
       <Button $primary={true} onClick={() => console.log('Button!')}>
         I&apos;m a Button
       </Button>
@@ -50,7 +50,11 @@ const Home = () => {
       <br />
 
       <Input defaultValue="@probablyup" type="text" />
-      <Input defaultValue={'@geelen'} type="text" $inputColor="rebeccapurple" />
+      <Input defaultValue={'@geelen'} type="text" $inputColor="rebeccapurple" /> */}
+
+      <Input placeholder="A small text input" />
+      <br />
+      <Input placeholder="A bigger text input" $size="2em" />
     </>
   );
 };
