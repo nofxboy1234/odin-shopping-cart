@@ -15,7 +15,8 @@ import styles from './Home.module.css';
 // import Thing from '../thing/Thing';
 
 // import { Input, Label, LabelText } from '../label/Label';
-import { GlobalStyle, Thing } from '../thingGlobal/Thing';
+// import { GlobalStyle, Thing } from '../thingGlobal/Thing';
+import Thing from '../thingWithChildren/Thing';
 
 const Home = () => {
   return (
@@ -92,8 +93,18 @@ const Home = () => {
         <LabelText $mode="dark">Foo</LabelText>
       </Label> */}
 
-      <GlobalStyle />
-      <Thing>I'm blue, da ba dee da ba daa</Thing>
+      {/* <GlobalStyle />
+      <Thing>I'm blue, da ba dee da ba daa</Thing> */}
+
+      <Thing>
+        <label htmlFor="foo-button" className="something">
+          Mystery button
+        </label>
+        <button id="foo-button">What do I do?</button>
+      </Thing>
+      <label htmlFor="foo-button" className="something">
+        Mystery button
+      </label>
     </>
   );
 };
