@@ -1,17 +1,20 @@
 import styles from './Home.module.css';
-import Button from '../styledButton/StyledButton';
-import { Wrapper, Title } from '../wrapperTitle/WrapperTitle';
-import FancyButton, { TomatoButton } from '../fancyButton/FancyButton';
-import PolyButton, {
-  TomatoButton as PolyTomatoButton,
-  ReversedButton,
-} from '../polymorphicProp/PolymorphicProp';
-import StyledCustomLink, {
-  CustomLink,
-} from '../styledCusomComponent/StyledCustomComponent';
-import Input, { PasswordInput } from '../styledComponentsAttrs/input';
-import Rotate from '../rotate/Rotate';
-import Thing from '../thing/Thing';
+
+// import Button from '../styledButton/StyledButton';
+// import { Wrapper, Title } from '../wrapperTitle/WrapperTitle';
+// import FancyButton, { TomatoButton } from '../fancyButton/FancyButton';
+// import PolyButton, {
+//   TomatoButton as PolyTomatoButton,
+//   ReversedButton,
+// } from '../polymorphicProp/PolymorphicProp';
+// import StyledCustomLink, {
+//   CustomLink,
+// } from '../styledCusomComponent/StyledCustomComponent';
+// import Input, { PasswordInput } from '../styledComponentsAttrs/input';
+// import Rotate from '../rotate/Rotate';
+// import Thing from '../thing/Thing';
+
+import { Input, Label, LabelText } from '../label/Label';
 
 const Home = () => {
   return (
@@ -62,14 +65,31 @@ const Home = () => {
       <PasswordInput placeholder="A bigger password input" $size="2em" /> */}
       {/* <Rotate>&lt; - &gt; </Rotate> */}
 
-      <Thing>Hello world!</Thing>
+      {/* <Thing>Hello world!</Thing>
       <Thing>How ya doing?</Thing>
       <Thing className="something">The sun is shining...</Thing>
       <div>Pretty nice day today</div>
       <Thing>Don't you think?</Thing>
       <div className="something-else">
         <Thing>Splendid.</Thing>
-      </div>
+      </div> */}
+
+      <Label>
+        <Input defaultChecked />
+        <LabelText>Foo</LabelText>
+      </Label>
+      <Label>
+        <Input />
+        <LabelText $mode="dark">Foo</LabelText>
+      </Label>
+      <Label>
+        <Input defaultChecked />
+        <LabelText>Foo</LabelText>
+      </Label>
+      <Label>
+        <Input defaultChecked />
+        <LabelText $mode="dark">Foo</LabelText>
+      </Label>
     </>
   );
 };
