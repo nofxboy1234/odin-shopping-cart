@@ -14,7 +14,8 @@ import styles from './Home.module.css';
 // import Rotate from '../rotate/Rotate';
 // import Thing from '../thing/Thing';
 
-import { Input, Label, LabelText } from '../label/Label';
+// import { Input, Label, LabelText } from '../label/Label';
+import { GlobalStyle, Thing } from '../thingGlobal/Thing';
 
 const Home = () => {
   return (
@@ -74,7 +75,7 @@ const Home = () => {
         <Thing>Splendid.</Thing>
       </div> */}
 
-      <Label>
+      {/* <Label>
         <Input defaultChecked />
         <LabelText>Foo</LabelText>
       </Label>
@@ -89,7 +90,10 @@ const Home = () => {
       <Label>
         <Input defaultChecked />
         <LabelText $mode="dark">Foo</LabelText>
-      </Label>
+      </Label> */}
+
+      <GlobalStyle />
+      <Thing>I'm blue, da ba dee da ba daa</Thing>
     </>
   );
 };
