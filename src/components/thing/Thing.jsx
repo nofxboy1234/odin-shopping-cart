@@ -22,7 +22,7 @@ const Thing = styled.div.attrs((props) => ({
   }
 
   .something-else & {
-    border: 1px solid; // <Thing> inside another element labeled "::after.something-else"
+    border: 1px solid; // <Thing> inside another element labeled ".something-else"
   }
 `;
 

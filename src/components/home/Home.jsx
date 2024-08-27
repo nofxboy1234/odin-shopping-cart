@@ -56,11 +56,20 @@ const Home = () => {
 
       {/* <Input placeholder="A small text input" />
       <br />
+      
       <Input placeholder="A bigger text input" $size="2em" />
       <br />
       <PasswordInput placeholder="A bigger password input" $size="2em" /> */}
       {/* <Rotate>&lt; - &gt; </Rotate> */}
+
       <Thing>Hello world!</Thing>
+      <Thing>How ya doing?</Thing>
+      <Thing className="something">The sun is shining...</Thing>
+      <div>Pretty nice day today</div>
+      <Thing>Don't you think?</Thing>
+      <div className="something-else">
+        <Thing>Splendid.</Thing>
+      </div>
     </>
   );
 };
