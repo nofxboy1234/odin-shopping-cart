@@ -10,6 +10,7 @@ import StyledCustomLink, {
   CustomLink,
 } from '../styledCusomComponent/StyledCustomComponent';
 import Input, { PasswordInput } from '../styledComponentsAttrs/input';
+import Rotate from '../rotate/Rotate';
 
 const Home = () => {
   return (
@@ -52,11 +53,12 @@ const Home = () => {
       <Input defaultValue="@probablyup" type="text" />
       <Input defaultValue={'@geelen'} type="text" $inputColor="rebeccapurple" /> */}
 
-      <Input placeholder="A small text input" />
+      {/* <Input placeholder="A small text input" />
       <br />
       <Input placeholder="A bigger text input" $size="2em" />
       <br />
-      <PasswordInput placeholder="A bigger password input" $size="2em" />
+      <PasswordInput placeholder="A bigger password input" $size="2em" /> */}
+      <Rotate>&lt; - &gt; </Rotate>
     </>
   );
 };
