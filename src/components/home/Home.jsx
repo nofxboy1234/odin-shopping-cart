@@ -9,6 +9,7 @@ import PolyButton, {
 import StyledCustomLink, {
   CustomLink,
 } from '../styledCusomComponent/StyledCustomComponent';
+import Input from '../input/Input';
 
 const Home = () => {
   return (
@@ -45,6 +46,11 @@ const Home = () => {
       <StyledCustomLink href={'#'} greeting={'hello'}>
         Styled, exciting CustomLink
       </StyledCustomLink>
+
+      <br />
+
+      <Input defaultValue="@probablyup" type="text" />
+      <Input defaultValue={'@geelen'} type="text" $inputColor="rebeccapurple" />
     </>
   );
 };
