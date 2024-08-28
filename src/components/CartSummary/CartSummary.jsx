@@ -56,6 +56,7 @@ const StyledCartSummary = styled(CartSummary)`
   > button {
     background-color: #4e71d3;
     color: white;
+
     font-weight: bold;
     border: 1px solid #4e71d3;
     border-radius: 2px;
