@@ -4,6 +4,7 @@ const Thing = styled.div`
   color: blue;
 
   button {
+    background-color: inherit;
     color: inherit;
   }
 
