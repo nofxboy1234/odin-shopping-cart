@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Thing = styled.div.attrs((props) => ({
+const Thing = styled.div.attrs((/*props*/) => ({
   tabIndex: 0,
 }))`
   color: blue;

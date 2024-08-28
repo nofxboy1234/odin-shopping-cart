@@ -71,7 +71,7 @@ const StyledCartSummary = styled(CartSummary)`
 
 CartSummary.propTypes = {
   cart: PropTypes.array,
-  getProductById: PropTypes.func,
+  className: PropTypes.string,
 };
 
 export default StyledCartSummary;
