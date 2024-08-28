@@ -60,9 +60,9 @@
 
   - [x] CSS Modules
     - [x] Configure named imports
-  - [ ] CSS-in-js
-    - [ ] styled-components
-      - [ ] Install
+  - [x] CSS-in-js
+    - [x] styled-components
+      - [x] Install
   - [x] Simple black and white style / jjk image palette
   - [ ] Chromatic Aberration
 
