@@ -31,7 +31,7 @@ const StyledCartSummary = styled(CartSummary)`
   flex-direction: column;
 
   justify-content: center;
-  gap: 0.8rem;
+  gap: 1rem;
   padding: 1rem;
   border: 1px solid rgb(240, 240, 240);
   border-radius: 5px;
@@ -39,6 +39,10 @@ const StyledCartSummary = styled(CartSummary)`
   cursor: pointer;
   height: 180px;
   width: 250px;
+
+  &:hover {
+    border: 1px solid rgb(196, 196, 196);
+  }
 
   .heading {
     font-weight: bold;
@@ -53,9 +57,15 @@ const StyledCartSummary = styled(CartSummary)`
     background-color: #4e71d3;
     color: white;
     font-weight: bold;
-    border: none;
+    border: 1px solid #4e71d3;
     border-radius: 2px;
     height: 35px;
+    cursor: pointer;
+  }
+
+  > button:hover {
+    background-color: white;
+    color: #4e71d3;
   }
 `;
 
