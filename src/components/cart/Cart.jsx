@@ -1,6 +1,6 @@
 import CartItem from '../cartItem/CartItem';
 import styles from './Cart.module.css';
-import CartSummary from '../CartSummary/CartSummary';
+import StyledCartSummary from '../CartSummary/CartSummary';
 import { useOutletContext } from 'react-router-dom';
 
 const Cart = () => {
@@ -21,7 +21,7 @@ const Cart = () => {
             return <CartItem key={product.id} product={product} />;
           })}
         </div>
-        <CartSummary cart={cart} />
+        <StyledCartSummary cart={cart} />
       </div>
     </>
   );
