@@ -11,7 +11,7 @@ const routes = [
     errorElement: <ErrorPage />,
     children: [
       {
-        path: 'shop/:category?',
+        path: 'shop',
         element: <Shop />,
       },
       {
