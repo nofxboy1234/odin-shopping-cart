@@ -20,7 +20,7 @@
   - [ ] user events
   - [ ] snapshots
   - [ ] mock callbacks
-  - [ ] mock components
+  - [ ] mock child components
   - [ ] createMemoryRouter
 
   - [x] Install
