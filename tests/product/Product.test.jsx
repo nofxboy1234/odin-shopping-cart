@@ -5,33 +5,14 @@ import { RouterProvider, createMemoryRouter } from 'react-router-dom';
 
 vi.mock('../../src/api/products', () => {
   return {
-    default: {
-      useProducts: () => ({
-        products: [
-          { image: '', title: 'a product', price: 99.99, quantity: 0 },
-        ],
-        setProducts: () => {},
-        error: null,
-        loading: false,
-      }),
-    },
+    default: () => ({
+      products: [{ image: '', title: 'a product', price: 99.99, quantity: 0 }],
+      setProducts: () => {},
+      error: null,
+      loading: false,
+    }),
   };
 });
-
-// vi.mock('../../src/api/products', () => {
-//   return {
-//     default: {
-//       useProducts: () => ({
-//         products: [
-//           { image: '', title: 'a product', price: 99.99, quantity: 0 },
-//         ],
-//         setProducts: () => {},
-//         error: null,
-//         loading: false,
-//       }),
-//     },
-//   };
-// });
 
 function setup() {
   return {
