@@ -4,7 +4,7 @@ import routes from '../../src/routes/routes';
 import { RouterProvider, createMemoryRouter } from 'react-router-dom';
 
 describe('Navigation component', () => {
-  it('renders the Home link', async () => {
+  it('renders the home link', async () => {
     const router = createMemoryRouter(routes, {
       initialEntries: ['/'],
       initialIndex: 0,
@@ -16,7 +16,7 @@ describe('Navigation component', () => {
     expect(link).toBeInTheDocument();
   });
 
-  it('renders the Home heading', async () => {
+  it('renders the shop link', async () => {
     const router = createMemoryRouter(routes, {
       initialEntries: ['/'],
       initialIndex: 0,
@@ -24,9 +24,19 @@ describe('Navigation component', () => {
 
     render(<RouterProvider router={router} />);
 
-    const heading = await screen.findByRole('heading', {
-      name: 'Welcome to Shopping Cart!',
+    const link = await screen.findByRole('link', { name: 'Shop' });
+    expect(link).toBeInTheDocument();
+  });
+
+  it('renders the shop link', async () => {
+    const router = createMemoryRouter(routes, {
+      initialEntries: ['/'],
+      initialIndex: 0,
     });
-    expect(heading).toBeInTheDocument();
+
+    render(<RouterProvider router={router} />);
+
+    const link = await screen.findByRole('link', { name: 'Cart (0)' });
+    expect(link).toBeInTheDocument();
   });
 });
