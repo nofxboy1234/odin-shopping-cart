@@ -28,17 +28,12 @@ function setup() {
 }
 
 describe('Product component', () => {
-  it('renders an image of the product', async () => {
+  it('renders an image of the product', () => {
     const { renderWithRouter } = setup();
     renderWithRouter();
-    const image = await screen.findByRole(
-      'img',
-      {
-        name: 'image of a product',
-      },
-      { timeout: 2000 }
-    );
-    // screen.debug();
+    const image = screen.getByRole('img', {
+      name: 'image of a product',
+    });
     expect(image).toBeInTheDocument();
   });
 });
