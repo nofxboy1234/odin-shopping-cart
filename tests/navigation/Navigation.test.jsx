@@ -23,7 +23,7 @@ describe('Navigation component', () => {
     expect(link).toBeInTheDocument();
   });
 
-  it('renders the shop link', async () => {
+  it('renders the cart link', async () => {
     const link = await screen.findByRole('link', { name: 'Cart (0)' });
     expect(link).toBeInTheDocument();
   });
