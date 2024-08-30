@@ -7,7 +7,7 @@ function setup() {
   return {
     renderWithRouter: () => {
       const router = createMemoryRouter(routes, {
-        initialEntries: ['/'],
+        initialEntries: ['/hello'],
         initialIndex: 0,
       });
 
@@ -17,10 +17,10 @@ function setup() {
 }
 
 describe('ErrorPage component', () => {
-  it('renders an error message', () => {
+  it('renders an error message', async () => {
     const { renderWithRouter } = setup();
     renderWithRouter();
-    const heading = screen.getByRole('heading', {
+    const heading = await screen.findByRole('heading', {
       name: 'Sorry, this route does not exist!',
     });
     expect(heading).toBeInTheDocument();
