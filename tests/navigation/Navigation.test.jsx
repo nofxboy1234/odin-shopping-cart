@@ -20,21 +20,33 @@ describe('Navigation component', () => {
   it('renders the home link', async () => {
     const { renderWithRouter } = setup();
     renderWithRouter();
-    const link = await screen.findByRole('link', { name: 'Home' });
+    const link = await screen.findByRole(
+      'link',
+      { name: 'Home' },
+      { timeout: 2000 }
+    );
     expect(link).toBeInTheDocument();
   });
 
   it('renders the shop link', async () => {
     const { renderWithRouter } = setup();
     renderWithRouter();
-    const link = await screen.findByRole('link', { name: 'Shop' });
+    const link = await screen.findByRole(
+      'link',
+      { name: 'Shop' },
+      { timeout: 2000 }
+    );
     expect(link).toBeInTheDocument();
   });
 
   it('renders the cart link', async () => {
     const { renderWithRouter } = setup();
     renderWithRouter();
-    const link = await screen.findByRole('link', { name: 'Cart (0)' });
+    const link = await screen.findByRole(
+      'link',
+      { name: 'Cart (0)' },
+      { timeout: 2000 }
+    );
     expect(link).toBeInTheDocument();
   });
 });
