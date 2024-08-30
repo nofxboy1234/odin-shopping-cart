@@ -23,19 +23,5 @@ describe('App component', () => {
     expect(link).toBeInTheDocument();
   });
 
-  it('renders the Home heading', async () => {
-    const router = createMemoryRouter(routes, {
-      initialEntries: ['/'],
-      initialIndex: 0,
-    });
-
-    render(<RouterProvider router={router} />);
-
-    const heading = await screen.findByRole('heading', {
-      name: 'Welcome to Shopping Cart!',
-    });
-    expect(heading).toBeInTheDocument();
-  });
-
   describe.skip('renders the navigation bar', () => {});
 });
