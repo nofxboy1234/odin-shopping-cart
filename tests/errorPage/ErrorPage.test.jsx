@@ -17,10 +17,10 @@ function setup() {
 }
 
 describe('ErrorPage component', () => {
-  it('renders an error message', async () => {
+  it('renders an error message', () => {
     const { renderWithRouter } = setup();
     renderWithRouter();
-    const heading = await screen.findByRole('heading', {
+    const heading = screen.getByRole('heading', {
       name: 'Sorry, this route does not exist!',
     });
     expect(heading).toBeInTheDocument();
