@@ -17,11 +17,11 @@
 
 - [ ] \*React Testing Library
 
+  - [ ] createMemoryRouter
+  - [ ] mock child components
+  - [ ] mock callbacks
   - [ ] user events
   - [ ] snapshots
-  - [ ] mock callbacks
-  - [ ] mock child components
-  - [ ] createMemoryRouter
 
   - [x] Install
 
