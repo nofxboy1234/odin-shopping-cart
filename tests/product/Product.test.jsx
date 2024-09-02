@@ -44,4 +44,11 @@ describe('Product component', () => {
     });
     expect(image).toBeInTheDocument();
   });
+
+  it('renders the title of the product', () => {
+    const { renderWithRouter } = setup();
+    renderWithRouter();
+    const title = screen.getByText('a product');
+    expect(title).toBeInTheDocument();
+  });
 });
