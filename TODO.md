@@ -19,9 +19,9 @@
 
   - [x] createMemoryRouter
   - [ ] mock child components
+  - [ ] mock async code
   - [ ] mock callbacks
   - [ ] query + command in context of a React Component
-  - [ ] mock async
   - [ ] user events
   - [ ] snapshots
 
