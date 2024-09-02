@@ -51,4 +51,25 @@ describe('Product component', () => {
     const title = screen.getByText('a product');
     expect(title).toBeInTheDocument();
   });
+
+  it('renders the price of the product', () => {
+    const { renderWithRouter } = setup();
+    renderWithRouter();
+    const price = screen.getByText('Price: 99.99');
+    expect(price).toBeInTheDocument();
+  });
+
+  it('renders the initial quantity to add to the cart', () => {
+    const { renderWithRouter } = setup();
+    renderWithRouter();
+    const quantity = screen.getByDisplayValue('1');
+    expect(quantity).toBeInTheDocument();
+  });
+
+  it('renders a button to add to the cart', () => {
+    const { renderWithRouter } = setup();
+    renderWithRouter();
+    const button = screen.getByRole('button', { name: 'Add to Cart' });
+    expect(button).toBeInTheDocument();
+  });
 });
