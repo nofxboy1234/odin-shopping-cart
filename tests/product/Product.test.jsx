@@ -7,7 +7,13 @@ vi.mock('../../src/api/products', () => {
   return {
     default: () => ({
       products: [
-        { id: 1, image: '', title: 'a product', price: 99.99, quantity: 0 },
+        {
+          id: 1,
+          image: '',
+          title: 'a product',
+          price: 99.99,
+          quantity: 0,
+        },
       ],
       setProducts: () => {},
       error: null,
