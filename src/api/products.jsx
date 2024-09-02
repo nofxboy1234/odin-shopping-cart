@@ -37,4 +37,10 @@ const useProducts = () => {
   return { products, setProducts, error, loading };
 };
 
+// const useProducts = { products: 1, setProducts: 2, error: 3, loading: 4 };
+
+const hello = 'Hello';
+const bye = 'Bye';
+
 export default useProducts;
+export { hello, bye };

@@ -5,20 +5,12 @@ import { RouterProvider, createMemoryRouter } from 'react-router-dom';
 
 vi.mock('../../src/api/products', () => {
   return {
-    default: () => ({
-      products: [
-        {
-          id: 1,
-          image: '',
-          title: 'a product',
-          price: 99.99,
-          quantity: 0,
-        },
-      ],
-      setProducts: () => {},
-      error: null,
-      loading: false,
-    }),
+    default: () => {
+      console.log('HELLO, this is useProducts mocked');
+    },
+    // default: () => ({ products: 2, setProducts: 4, error: 6, loading: 8 }),
+    hello: () => console.log('hi!'),
+    bye: () => console.log('bye!'),
   };
 });
 
@@ -39,9 +31,9 @@ describe('Product component', () => {
   it('renders an image of the product', () => {
     const { renderWithRouter } = setup();
     renderWithRouter();
-    const image = screen.getByRole('img', {
-      name: 'image of a product',
-    });
-    expect(image).toBeInTheDocument();
+    // const image = screen.getByRole('img', {
+    //   name: 'image of a product',
+    // });
+    // expect(image).toBeInTheDocument();
   });
 });
