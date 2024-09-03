@@ -1,7 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import routes from '../../src/routes/routes';
-import { RouterProvider, createMemoryRouter } from 'react-router-dom';
+import { screen } from '@testing-library/react';
 
 import useProducts from '../../src/api/products';
 import renderWithRouter from '../helpers/router';
