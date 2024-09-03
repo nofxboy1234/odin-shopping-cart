@@ -23,7 +23,7 @@
   - [x] query + command in context of a React Component
   - [~] user events
   - [~] mock child components
-  - [ ] snapshots
+  - [~] snapshots
 
   - [x] Install
 
