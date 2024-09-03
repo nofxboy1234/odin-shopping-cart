@@ -25,6 +25,21 @@ function setup() {
 }
 
 describe('Product component', () => {
+  const useProductsMockValue = {
+    products: [
+      {
+        id: 1,
+        image: '',
+        title: 'a product',
+        price: 99.99,
+        quantity: 0,
+      },
+    ],
+    setProducts: () => {},
+    error: null,
+    loading: false,
+  };
+
   beforeEach(async () => {
     const actualUseProducts = await vi.importActual('../../src/api/products');
     vi.mocked(useProducts).mockImplementation(() =>
@@ -37,20 +52,6 @@ describe('Product component', () => {
   });
 
   it('renders an image of the product', () => {
-    const useProductsMockValue = {
-      products: [
-        {
-          id: 1,
-          image: '',
-          title: 'a product',
-          price: 99.99,
-          quantity: 0,
-        },
-      ],
-      setProducts: () => {},
-      error: null,
-      loading: false,
-    };
     vi.mocked(useProducts).mockReturnValue(useProductsMockValue);
 
     const { renderWithRouter } = setup();
@@ -62,6 +63,8 @@ describe('Product component', () => {
   });
 
   it('renders the title of the product', () => {
+    vi.mocked(useProducts).mockReturnValue(useProductsMockValue);
+
     const { renderWithRouter } = setup();
     renderWithRouter();
     const title = screen.getByText('a product');
@@ -69,6 +72,8 @@ describe('Product component', () => {
   });
 
   it('renders the price of the product', () => {
+    vi.mocked(useProducts).mockReturnValue(useProductsMockValue);
+
     const { renderWithRouter } = setup();
     renderWithRouter();
     const price = screen.getByText('Price: 99.99');
@@ -76,6 +81,8 @@ describe('Product component', () => {
   });
 
   it('renders the initial quantity to add to the cart', () => {
+    vi.mocked(useProducts).mockReturnValue(useProductsMockValue);
+
     const { renderWithRouter } = setup();
     renderWithRouter();
     const quantity = screen.getByDisplayValue('1');
@@ -83,6 +90,8 @@ describe('Product component', () => {
   });
 
   it('renders a button to add to the cart', () => {
+    vi.mocked(useProducts).mockReturnValue(useProductsMockValue);
+
     const { renderWithRouter } = setup();
     renderWithRouter();
     const button = screen.getByRole('button', { name: 'Add to Cart' });
