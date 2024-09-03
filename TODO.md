@@ -22,7 +22,7 @@
   - [x] mock async code
   - [x] query + command in context of a React Component
   - [~] user events
-  - [ ] mock child components
+  - [~] mock child components
   - [ ] snapshots
 
   - [x] Install
