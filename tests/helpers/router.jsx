@@ -8,7 +8,7 @@ const renderWithRouter = (initialIndex) => {
     initialIndex,
   });
 
-  render(<RouterProvider router={router} />);
+  return render(<RouterProvider router={router} />);
 };
 
 export default renderWithRouter;
