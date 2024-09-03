@@ -4,6 +4,7 @@ import routes from '../../src/routes/routes';
 import { RouterProvider, createMemoryRouter } from 'react-router-dom';
 
 import useProducts from '../../src/api/products';
+import renderWithRouter from '../helpers/router';
 
 vi.mock('../../src/api/products', () => {
   return {
@@ -13,14 +14,7 @@ vi.mock('../../src/api/products', () => {
 
 function setup() {
   return {
-    renderWithRouter: () => {
-      const router = createMemoryRouter(routes, {
-        initialEntries: ['/', '/shop'],
-        initialIndex: 1,
-      });
-
-      render(<RouterProvider router={router} />);
-    },
+    renderWithRouter,
   };
 }
 
@@ -55,7 +49,8 @@ describe('Product component with API mocked', () => {
     vi.mocked(useProducts).mockReturnValue(useProductsMockValue);
 
     const { renderWithRouter } = setup();
-    renderWithRouter();
+    renderWithRouter(1);
+
     const image = screen.getByRole('img', {
       name: 'image of a product',
     });
@@ -66,7 +61,8 @@ describe('Product component with API mocked', () => {
     vi.mocked(useProducts).mockReturnValue(useProductsMockValue);
 
     const { renderWithRouter } = setup();
-    renderWithRouter();
+    renderWithRouter(1);
+
     const title = screen.getByText('a product');
     expect(title).toBeInTheDocument();
   });
@@ -75,7 +71,8 @@ describe('Product component with API mocked', () => {
     vi.mocked(useProducts).mockReturnValue(useProductsMockValue);
 
     const { renderWithRouter } = setup();
-    renderWithRouter();
+    renderWithRouter(1);
+
     const price = screen.getByText('Price: 99.99');
     expect(price).toBeInTheDocument();
   });
@@ -84,7 +81,8 @@ describe('Product component with API mocked', () => {
     vi.mocked(useProducts).mockReturnValue(useProductsMockValue);
 
     const { renderWithRouter } = setup();
-    renderWithRouter();
+    renderWithRouter(1);
+
     const quantity = screen.getByDisplayValue('1');
     expect(quantity).toBeInTheDocument();
   });
@@ -93,7 +91,8 @@ describe('Product component with API mocked', () => {
     vi.mocked(useProducts).mockReturnValue(useProductsMockValue);
 
     const { renderWithRouter } = setup();
-    renderWithRouter();
+    renderWithRouter(1);
+
     const button = screen.getByRole('button', { name: 'Add to Cart' });
     expect(button).toBeInTheDocument();
   });
@@ -101,7 +100,8 @@ describe('Product component with API mocked', () => {
   describe('Product component using API', () => {
     it('renders the title of a product', async () => {
       const { renderWithRouter } = setup();
-      renderWithRouter();
+      renderWithRouter(1);
+
       const title = await screen.findByText('Mens Cotton Jacket');
       expect(title).toBeInTheDocument();
     });
