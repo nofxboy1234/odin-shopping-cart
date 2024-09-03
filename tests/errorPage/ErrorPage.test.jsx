@@ -1,30 +1,18 @@
 import { describe, it, expect } from 'vitest';
-import {
-  render,
-  screen,
-  waitForElementToBeRemoved,
-} from '@testing-library/react';
-import routes from '../../src/routes/routes';
-import { RouterProvider, createMemoryRouter } from 'react-router-dom';
+import { screen, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import renderWithRouter from '../helpers/router';
 
 function setup() {
   return {
-    renderWithRouter: () => {
-      const router = createMemoryRouter(routes, {
-        initialEntries: ['/hello'],
-        initialIndex: 0,
-      });
-
-      render(<RouterProvider router={router} />);
-    },
+    renderWithRouter,
   };
 }
-
 describe('ErrorPage component', () => {
   it('renders an error message', () => {
     const { renderWithRouter } = setup();
-    renderWithRouter();
+    renderWithRouter(3);
+
     const heading = screen.getByRole('heading', {
       name: 'Sorry, this route does not exist!',
     });
@@ -33,16 +21,20 @@ describe('ErrorPage component', () => {
 
   it('renders the error status text', () => {
     const { renderWithRouter } = setup();
-    renderWithRouter();
+    renderWithRouter(3);
+
     const statusText = screen.getByTestId('errorStatusText');
     expect(statusText).toHaveTextContent('Not Found');
   });
 
   it('renders the error data', () => {
     const { renderWithRouter } = setup();
-    renderWithRouter();
+    renderWithRouter(3);
+
     const errorData = screen.getByTestId('errorData');
-    expect(errorData).toHaveTextContent('Error: No route matches URL "/hello"');
+    expect(errorData).toHaveTextContent(
+      'Error: No route matches URL "/this-will-error"'
+    );
   });
 
   describe('when clicking the Go Back link', () => {
@@ -50,7 +42,7 @@ describe('ErrorPage component', () => {
 
     it('renders the error data', async () => {
       const { renderWithRouter } = setup();
-      renderWithRouter();
+      renderWithRouter(3);
 
       const link = screen.getByRole('link');
       await user.click(link);
