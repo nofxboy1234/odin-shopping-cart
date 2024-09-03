@@ -24,7 +24,7 @@ function setup() {
   };
 }
 
-describe('Product component', () => {
+describe('Product component with API mocked', () => {
   const useProductsMockValue = {
     products: [
       {
@@ -96,5 +96,14 @@ describe('Product component', () => {
     renderWithRouter();
     const button = screen.getByRole('button', { name: 'Add to Cart' });
     expect(button).toBeInTheDocument();
+  });
+
+  describe('Product component using API', () => {
+    it('renders the title of a product', async () => {
+      const { renderWithRouter } = setup();
+      renderWithRouter();
+      const title = await screen.findByText('Mens Cotton Jacket');
+      expect(title).toBeInTheDocument();
+    });
   });
 });
