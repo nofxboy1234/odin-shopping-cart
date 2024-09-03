@@ -18,12 +18,12 @@
 - [ ] \*React Testing Library
 
   - [x] createMemoryRouter
-  - [~] mock callbacks
   - [x] mock async code
   - [x] query + command in context of a React Component
   - [x] user events
-  - [~] mock child components
   - [x] snapshots
+  - [~] mock callbacks
+  - [~] mock child components
 
   - [x] Install
 
