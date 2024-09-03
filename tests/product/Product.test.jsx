@@ -1,24 +1,13 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import routes from '../../src/routes/routes';
 import { RouterProvider, createMemoryRouter } from 'react-router-dom';
 
+import useProducts from '../../src/api/products';
+
 vi.mock('../../src/api/products', () => {
   return {
-    default: () => ({
-      products: [
-        {
-          id: 1,
-          image: '',
-          title: 'a product',
-          price: 99.99,
-          quantity: 0,
-        },
-      ],
-      setProducts: () => {},
-      error: null,
-      loading: false,
-    }),
+    default: vi.fn(),
   };
 });
 
@@ -36,7 +25,34 @@ function setup() {
 }
 
 describe('Product component', () => {
+  beforeEach(async () => {
+    const actualUseProducts = await vi.importActual('../../src/api/products');
+    vi.mocked(useProducts).mockImplementation(() =>
+      actualUseProducts.default()
+    );
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
   it('renders an image of the product', () => {
+    const useProductsMockValue = {
+      products: [
+        {
+          id: 1,
+          image: '',
+          title: 'a product',
+          price: 99.99,
+          quantity: 0,
+        },
+      ],
+      setProducts: () => {},
+      error: null,
+      loading: false,
+    };
+    vi.mocked(useProducts).mockReturnValue(useProductsMockValue);
+
     const { renderWithRouter } = setup();
     renderWithRouter();
     const image = screen.getByRole('img', {
