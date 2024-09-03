@@ -60,7 +60,6 @@ describe('Navigation component', () => {
     const { renderWithRouter } = setup();
     const { container } = renderWithRouter();
 
-    // await waitForElementToBeRemoved(() => screen.getByText('Loading...'));
     await waitFor(() => {
       expect(screen.getByText('Welcome to Shopping Cart!')).toBeInTheDocument();
     });

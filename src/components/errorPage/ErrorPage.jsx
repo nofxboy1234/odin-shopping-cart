@@ -6,8 +6,8 @@ const ErrorPage = () => {
   return (
     <>
       <h1>Sorry, this route does not exist!</h1>
-      <div>{error.statusText}</div>
-      <div>{error.data}</div>
+      <div data-testid="errorStatusText">{error.statusText}</div>
+      <div data-testid="errorData">{error.data}</div>
       <Link to="/">Click here to go back to the home page</Link>
     </>
   );
