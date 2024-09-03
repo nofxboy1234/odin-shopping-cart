@@ -21,7 +21,7 @@
   - [~] mock callbacks
   - [x] mock async code
   - [x] query + command in context of a React Component
-  - [~] user events
+  - [x] user events
   - [~] mock child components
   - [x] snapshots
 
