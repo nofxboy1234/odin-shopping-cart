@@ -2,9 +2,16 @@ import { RouterProvider, createMemoryRouter } from 'react-router-dom';
 import { render } from '@testing-library/react';
 import routes from '../../src/routes/routes';
 
-const renderWithRouter = (initialIndex) => {
+const renderWithRouter = (path) => {
+  const initialEntries = ['/', '/shop', '/cart', '/this-will-error'];
+  let initialIndex = 0;
+
+  if (initialEntries.includes(path)) {
+    initialIndex = initialEntries.indexOf(path);
+  }
+
   const router = createMemoryRouter(routes, {
-    initialEntries: ['/', '/shop', '/cart', '/this-will-error'],
+    initialEntries,
     initialIndex,
   });
 

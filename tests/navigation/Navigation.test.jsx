@@ -5,13 +5,14 @@ import renderWithRouter from '../helpers/router';
 function setup() {
   return {
     renderWithRouter,
+    path: '/',
   };
 }
 
 describe('Navigation component', () => {
   it('renders the home link', async () => {
-    const { renderWithRouter } = setup();
-    renderWithRouter(0);
+    const { renderWithRouter, path } = setup();
+    renderWithRouter(path);
 
     const link = await screen.findByRole(
       'link',
@@ -22,8 +23,8 @@ describe('Navigation component', () => {
   });
 
   it('renders the shop link', async () => {
-    const { renderWithRouter } = setup();
-    renderWithRouter(0);
+    const { renderWithRouter, path } = setup();
+    renderWithRouter(path);
 
     const link = await screen.findByRole(
       'link',
@@ -34,8 +35,8 @@ describe('Navigation component', () => {
   });
 
   it('renders the cart link', async () => {
-    const { renderWithRouter } = setup();
-    renderWithRouter(0);
+    const { renderWithRouter, path } = setup();
+    renderWithRouter(path);
 
     const link = await screen.findByRole(
       'link',
@@ -46,8 +47,8 @@ describe('Navigation component', () => {
   });
 
   it('renders the navigation bar above the home page', async () => {
-    const { renderWithRouter } = setup();
-    const { container } = renderWithRouter(0);
+    const { renderWithRouter, path } = setup();
+    const { container } = renderWithRouter(path);
 
     await waitFor(() => {
       expect(screen.getByText('Welcome to Shopping Cart!')).toBeInTheDocument();

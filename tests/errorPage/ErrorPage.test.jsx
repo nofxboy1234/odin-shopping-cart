@@ -6,12 +6,14 @@ import renderWithRouter from '../helpers/router';
 function setup() {
   return {
     renderWithRouter,
+    path: '/this-will-error',
   };
 }
+
 describe('ErrorPage component', () => {
   it('renders an error message', () => {
-    const { renderWithRouter } = setup();
-    renderWithRouter(3);
+    const { renderWithRouter, path } = setup();
+    renderWithRouter(path);
 
     const heading = screen.getByRole('heading', {
       name: 'Sorry, this route does not exist!',
@@ -20,16 +22,16 @@ describe('ErrorPage component', () => {
   });
 
   it('renders the error status text', () => {
-    const { renderWithRouter } = setup();
-    renderWithRouter(3);
+    const { renderWithRouter, path } = setup();
+    renderWithRouter(path);
 
     const statusText = screen.getByTestId('errorStatusText');
     expect(statusText).toHaveTextContent('Not Found');
   });
 
   it('renders the error data', () => {
-    const { renderWithRouter } = setup();
-    renderWithRouter(3);
+    const { renderWithRouter, path } = setup();
+    renderWithRouter(path);
 
     const errorData = screen.getByTestId('errorData');
     expect(errorData).toHaveTextContent(
@@ -41,8 +43,8 @@ describe('ErrorPage component', () => {
     const user = userEvent.setup();
 
     it('renders the error data', async () => {
-      const { renderWithRouter } = setup();
-      renderWithRouter(3);
+      const { renderWithRouter, path } = setup();
+      renderWithRouter(path);
 
       const link = screen.getByRole('link');
       await user.click(link);
