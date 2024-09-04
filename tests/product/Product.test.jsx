@@ -21,35 +21,16 @@ describe('Product component with API mocked', () => {
     },
   ];
 
-  // const useProductsMockValue = {
-  //   products: [
-  //     {
-  //       id: 1,
-  //       image: '',
-  //       title: 'a product',
-  //       price: 99.99,
-  //       quantity: 0,
-  //     },
-  //   ],
-  //   setProducts: () => {},
-  //   error: null,
-  //   loading: false,
-  // };
-
   beforeEach(async () => {
-    // const actualUseProducts = await vi.importActual('../../src/api/products');
-    // vi.mocked(useProducts).mockImplementation(() =>
-    //   actualUseProducts.default()
-    // );
+    vi.spyOn(window, 'fetch');
   });
 
   afterEach(() => {
-    // vi.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   it('renders an image of a product', async () => {
-    // vi.mocked(useProducts).mockReturnValue(useProductsMockValue);
-    window.fetch = vi.fn(() => {
+    window.fetch.mockImplementation(() => {
       const response = {
         json: () => Promise.resolve(productsMockValue),
         ok: true,
@@ -65,17 +46,13 @@ describe('Product component with API mocked', () => {
       name: 'image of a product',
     });
     expect(image).toBeInTheDocument();
-
-    // vi.restoreAllMocks();
   });
 
-  it.skip('renders the title of the product', () => {
-    vi.mocked(useProducts).mockReturnValue(productsMockValue);
-
+  it('renders the title of the product', async () => {
     const { renderWithRouter, path } = setup();
     renderWithRouter(path);
 
-    const title = screen.getByText('a product');
+    const title = await screen.findByText('a product');
     expect(title).toBeInTheDocument();
   });
 
