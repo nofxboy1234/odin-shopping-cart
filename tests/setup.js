@@ -18,7 +18,7 @@ const products = [
 
 export const restHandlers = [
   http.get('https://fakestoreapi.com/products', async () => {
-    // Await a random realistic server response time.
+    // Wait for 500ms before responding.
     await delay(500);
 
     return HttpResponse.json(products);
