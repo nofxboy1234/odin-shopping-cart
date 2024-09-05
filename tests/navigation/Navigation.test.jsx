@@ -64,69 +64,12 @@ describe('Navigation component', () => {
     expect(link).toBeInTheDocument();
   });
 
-  it.skip('renders the navigation bar above the home page', async () => {
-    const { renderWithRouter, path } = setup();
-    const { container } = renderWithRouter(path);
-
-    await waitFor(() => {
-      expect(screen.getByText('Welcome to Shopping Cart!')).toBeInTheDocument();
-    });
-    expect(container).toMatchSnapshot();
-  });
-
   it.skip('renders the home page', async () => {
     const { renderWithRouter, path } = setup();
     renderWithRouter(path);
 
     await waitFor(() => {
       expect(screen.getByText('Welcome to Shopping Cart!')).toBeInTheDocument();
-    });
-  });
-
-  describe.skip('when clicking the Shop navbar link', async () => {
-    it('renders the shop page', async () => {
-      const user = userEvent.setup();
-
-      const { renderWithRouter, path } = setup();
-      renderWithRouter(path);
-
-      const link = await screen.findByRole('link', { name: 'Shop' });
-      await user.click(link);
-
-      const heading = await screen.findByTestId('shop-heading');
-      expect(heading).toBeInTheDocument();
-    });
-  });
-
-  describe.skip('when clicking the Cart navbar link', async () => {
-    describe('when the cart is empty', () => {
-      it('renders the cart page with an empty shopping cart', async () => {
-        const user = userEvent.setup();
-
-        const { renderWithRouter, path } = setup();
-        renderWithRouter(path);
-
-        const link = await screen.findByRole('link', { name: 'Cart (0)' });
-        await user.click(link);
-
-        const heading = await screen.findByText('Your shopping cart is empty');
-        expect(heading).toBeInTheDocument();
-      });
-    });
-
-    describe.skip('when the cart has items in it', () => {
-      it('renders the cart page with the items', async () => {
-        const user = userEvent.setup();
-
-        const { renderWithRouter, path } = setup();
-        renderWithRouter(path);
-
-        const link = await screen.findByRole('link', { name: 'Cart (0)' });
-        await user.click(link);
-
-        const heading = await screen.findByText('Your shopping cart is empty');
-        expect(heading).toBeInTheDocument();
-      });
     });
   });
 });
