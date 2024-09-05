@@ -45,7 +45,7 @@ describe('ErrorPage component', () => {
   });
 
   describe('when clicking the Go Back link', () => {
-    it.only('renders the home page', async () => {
+    it('renders the home page', async () => {
       const { renderWithRouter, path } = setup();
       renderWithRouter(path);
 
@@ -53,28 +53,18 @@ describe('ErrorPage component', () => {
         name: 'Click here to go back to the home page',
       });
 
-      screen.debug();
       const user = userEvent.setup();
       await user.click(link);
 
-      screen.debug();
       const loadingText = screen.getByText('Loading...');
       expect(loadingText).toBeInTheDocument();
 
-      // await waitFor(() => {
-      //   expect(screen.getByText('Loading...')).toBeInTheDocument();
-      // });
-      // const loadingText = screen.getByText('Loading...');
+      await waitForElementToBeRemoved(() => screen.getByText('Loading...'));
 
-      // expect(loadingText).toBeInTheDocument();
-
-      // await waitForElementToBeRemoved(() => screen.getByText('Loading...'));
-      // screen.debug();
-
-      // const heading = screen.getByRole('heading', {
-      //   name: 'Welcome to Shopping Cart!',
-      // });
-      // expect(heading).toBeInTheDocument();
+      const heading = screen.getByRole('heading', {
+        name: 'Welcome to Shopping Cart!',
+      });
+      expect(heading).toBeInTheDocument();
     });
   });
 });
