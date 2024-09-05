@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { screen } from '@testing-library/react';
+import { logRoles, prettyDOM, screen } from '@testing-library/react';
 
 import renderWithRouter from '../helpers/router';
 import userEvent from '@testing-library/user-event';
@@ -54,7 +54,7 @@ describe('Product component with API mocked', () => {
     expect(button).toBeInTheDocument();
   });
 
-  describe.only('when clicking the Add to Cart button', () => {
+  describe('when clicking the Add to Cart button', () => {
     it('updates the cart navigation menu quantity', async () => {
       const user = userEvent.setup();
 
@@ -68,8 +68,36 @@ describe('Product component with API mocked', () => {
       expect(link).toBeInTheDocument();
       await user.click(button);
       expect(link).toHaveTextContent('Cart (1)');
+    });
+  });
 
-      screen.debug();
+  describe('when a product is in the cart', () => {
+    describe('when updating the product quantity', () => {
+      it.only('updates the cart navigation menu quantity', async () => {
+        const user = userEvent.setup();
+
+        const { renderWithRouter, path } = setup();
+        const { container } = renderWithRouter(path);
+
+        const button = await screen.findByRole('button', {
+          name: 'Add to Cart',
+        });
+        const link = await screen.findByRole('link', { name: 'Cart (0)' });
+        await user.click(button);
+        expect(link).toHaveTextContent('Cart (1)');
+
+        // logRoles(container);
+        // console.log(prettyDOM(container));
+
+        const quantity = await screen.findByRole('spinbutton');
+        expect(quantity).toHaveValue(1);
+
+        await user.click(quantity);
+        await user.keyboard('{Control>}A{/Control}{3}');
+        expect(quantity).toHaveValue(3);
+
+        expect(link).toHaveTextContent('Cart (3)');
+      });
     });
   });
 });
