@@ -73,7 +73,7 @@ describe('Product component with API mocked', () => {
 
   describe('when a product is in the cart', () => {
     describe('when updating the product quantity', () => {
-      it.only('updates the cart navigation menu quantity', async () => {
+      it('updates the cart navigation menu quantity', async () => {
         const user = userEvent.setup();
 
         const { renderWithRouter, path } = setup();
@@ -95,8 +95,35 @@ describe('Product component with API mocked', () => {
         await user.click(quantity);
         await user.keyboard('{Control>}A{/Control}{3}');
         expect(quantity).toHaveValue(3);
-
         expect(link).toHaveTextContent('Cart (3)');
+      });
+    });
+
+    describe('when clicking the Remove from Cart button', () => {
+      it('updates the cart navigation menu quantity to 0 and the quantity input to 1', async () => {
+        const user = userEvent.setup();
+
+        const { renderWithRouter, path } = setup();
+        const { container } = renderWithRouter(path);
+
+        const button = await screen.findByRole('button', {
+          name: 'Add to Cart',
+        });
+        const link = await screen.findByRole('link', { name: 'Cart (0)' });
+        await user.click(button);
+        expect(link).toHaveTextContent('Cart (1)');
+
+        const quantity = await screen.findByRole('spinbutton');
+        expect(quantity).toHaveValue(1);
+
+        await user.click(quantity);
+        await user.keyboard('{Control>}A{/Control}{3}');
+        expect(quantity).toHaveValue(3);
+        expect(link).toHaveTextContent('Cart (3)');
+
+        await user.click(button);
+        expect(quantity).toHaveValue(1);
+        expect(link).toHaveTextContent('Cart (0)');
       });
     });
   });
