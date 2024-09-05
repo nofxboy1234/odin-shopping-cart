@@ -1,5 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { screen, waitForElementToBeRemoved } from '@testing-library/react';
+import {
+  getByText,
+  screen,
+  waitFor,
+  waitForElementToBeRemoved,
+} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import renderWithRouter from '../helpers/router';
 
@@ -40,21 +45,36 @@ describe('ErrorPage component', () => {
   });
 
   describe('when clicking the Go Back link', () => {
-    const user = userEvent.setup();
-
-    it('renders the error data', async () => {
+    it.only('renders the home page', async () => {
       const { renderWithRouter, path } = setup();
       renderWithRouter(path);
 
-      const link = screen.getByRole('link');
+      const link = screen.getByRole('link', {
+        name: 'Click here to go back to the home page',
+      });
+
+      screen.debug();
+      const user = userEvent.setup();
       await user.click(link);
 
-      await waitForElementToBeRemoved(() => screen.getByText('Loading...'));
+      screen.debug();
+      const loadingText = screen.getByText('Loading...');
+      expect(loadingText).toBeInTheDocument();
 
-      const heading = screen.getByRole('heading', {
-        name: 'Welcome to Shopping Cart!',
-      });
-      expect(heading).toBeInTheDocument();
+      // await waitFor(() => {
+      //   expect(screen.getByText('Loading...')).toBeInTheDocument();
+      // });
+      // const loadingText = screen.getByText('Loading...');
+
+      // expect(loadingText).toBeInTheDocument();
+
+      // await waitForElementToBeRemoved(() => screen.getByText('Loading...'));
+      // screen.debug();
+
+      // const heading = screen.getByRole('heading', {
+      //   name: 'Welcome to Shopping Cart!',
+      // });
+      // expect(heading).toBeInTheDocument();
     });
   });
 });

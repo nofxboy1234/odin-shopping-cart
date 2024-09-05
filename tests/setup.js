@@ -2,7 +2,7 @@ import { expect, afterEach, beforeAll, afterAll } from 'vitest';
 import { cleanup } from '@testing-library/react';
 import * as matchers from '@testing-library/jest-dom/matchers';
 import { setupServer } from 'msw/node';
-import { HttpResponse, http } from 'msw';
+import { HttpResponse, delay, http } from 'msw';
 
 expect.extend(matchers);
 
@@ -17,7 +17,10 @@ const products = [
 ];
 
 export const restHandlers = [
-  http.get('https://fakestoreapi.com/products', () => {
+  http.get('https://fakestoreapi.com/products', async () => {
+    // Await a random realistic server response time.
+    await delay(500);
+
     return HttpResponse.json(products);
   }),
 ];
