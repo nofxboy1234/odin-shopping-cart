@@ -36,7 +36,9 @@ const CartItem = ({ product }) => {
         </div>
 
         <div className={styles.editContainer}>
-          <div>{(quantity * product.price).toFixed(2)}</div>
+          <div data-testid="subtotal">
+            {(quantity * product.price).toFixed(2)}
+          </div>
           <input
             type="number"
             id="quantity"
