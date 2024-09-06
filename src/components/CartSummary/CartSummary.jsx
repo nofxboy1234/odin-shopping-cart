@@ -1,29 +1,39 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 const CartSummary = ({ className, cart }) => {
-  return (
-    <div className={className}>
-      <div className="heading">Cart Summary</div>
-      <div className="totalLine">
-        <div>
-          Total: ({cart.reduce((total, product) => total + product.quantity, 0)}{' '}
-          item/s)
-        </div>
-        <div>
-          {cart
-            .reduce((total, product) => {
-              const subTotal = product.quantity * product.price;
-              return total + subTotal;
-            }, 0)
-            .toFixed(2)}
-        </div>
+  const [checkedOut, setCheckedOut] = useState(false);
+
+  if (checkedOut) {
+    return (
+      <div className={className}>
+        <div className="heading">Thanks for shopping with us!</div>);
       </div>
-      <button onClick={() => alert('Thanks for shopping with us!')}>
-        Check out
-      </button>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className={className}>
+        <div className="heading">Cart Summary</div>
+        <div className="totalLine">
+          <div>
+            Total: (
+            {cart.reduce((total, product) => total + product.quantity, 0)}{' '}
+            item/s)
+          </div>
+          <div>
+            {cart
+              .reduce((total, product) => {
+                const subTotal = product.quantity * product.price;
+                return total + subTotal;
+              }, 0)
+              .toFixed(2)}
+          </div>
+        </div>
+        <button onClick={() => setCheckedOut(true)}>Check out</button>
+      </div>
+    );
+  }
 };
 
 const StyledCartSummary = styled(CartSummary)`
