@@ -16,7 +16,12 @@ const useProducts = () => {
       controller.signal
     )
       .then((json) => {
-        setProducts(json.map((product) => ({ ...product, quantity: 0 })));
+        setProducts(
+          json.map((product) => ({
+            ...product,
+            quantity: product.quantity || 0,
+          }))
+        );
         setError(null);
       })
       .catch((error) => {
