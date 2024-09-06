@@ -1,7 +1,13 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { screen } from '@testing-library/react';
 import renderWithRouter from '../helpers/router';
 import { server, http, delay, HttpResponse } from '../setup';
+
+vi.mock('../../src/components/product/Product', () => {
+  return {
+    default: ({ product }) => <div>{product.title}</div>,
+  };
+});
 
 function setup() {
   return {
@@ -57,6 +63,13 @@ describe('Shop component', () => {
     renderWithRouter(path);
 
     const product1Title = await screen.findByText('a product');
+    screen.debug();
     expect(product1Title).toBeInTheDocument();
+
+    const product2Title = await screen.findByText('a product 2');
+    expect(product2Title).toBeInTheDocument();
+
+    const product3Title = await screen.findByText('a product 3');
+    expect(product3Title).toBeInTheDocument();
   });
 });
