@@ -63,7 +63,6 @@ describe('Shop component', () => {
     renderWithRouter(path);
 
     const product1Title = await screen.findByText('a product');
-    screen.debug();
     expect(product1Title).toBeInTheDocument();
 
     const product2Title = await screen.findByText('a product 2');
