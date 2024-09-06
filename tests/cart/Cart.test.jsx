@@ -9,6 +9,12 @@ vi.mock('../../src/components/cartItem/CartItem', () => {
   };
 });
 
+vi.mock('../../src/components/CartSummary/CartSummary', () => {
+  return {
+    default: ({ className, cart }) => <div>Cart Summary</div>,
+  };
+});
+
 function setup() {
   return {
     renderWithRouter,
@@ -93,6 +99,15 @@ describe('Cart component', () => {
 
       const renderedProducts = await screen.findAllByText(/a product/);
       expect(renderedProducts).toHaveLength(4);
+    });
+
+    it('renders the cart summary', async () => {
+      const { renderWithRouter, path, overrideFetchedProducts } = setup();
+      overrideFetchedProducts();
+      renderWithRouter(path);
+
+      const cartSummary = await screen.findByText('Cart Summary');
+      expect(cartSummary).toBeInTheDocument();
     });
   });
 });
