@@ -8,7 +8,7 @@ const CartSummary = ({ className, cart }) => {
   if (checkedOut) {
     return (
       <div className={className}>
-        <div className="heading">Thanks for shopping with us!</div>);
+        <div className="heading">Thanks for shopping with us!</div>
       </div>
     );
   } else {
