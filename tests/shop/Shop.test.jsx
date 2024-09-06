@@ -25,54 +25,7 @@ describe('Shop component', () => {
     expect(heading).toBeInTheDocument();
   });
 
-  it('renders all the products', async () => {
-    const products = [
-      {
-        id: 1,
-        image: '',
-        title: 'a product',
-        price: 99.99,
-        quantity: 0,
-      },
-      {
-        id: 2,
-        image: '',
-        title: 'a product 2',
-        price: 999.99,
-        quantity: 0,
-      },
-      {
-        id: 3,
-        image: '',
-        title: 'a product 3',
-        price: 9999.99,
-        quantity: 0,
-      },
-    ];
-
-    server.use(
-      http.get('https://fakestoreapi.com/products', async () => {
-        // Wait for 500ms before responding.
-        await delay(500);
-
-        return HttpResponse.json(products);
-      })
-    );
-
-    const { renderWithRouter, path } = setup();
-    renderWithRouter(path);
-
-    const product1Title = await screen.findByText('a product');
-    expect(product1Title).toBeInTheDocument();
-
-    const product2Title = await screen.findByText('a product 2');
-    expect(product2Title).toBeInTheDocument();
-
-    const product3Title = await screen.findByText('a product 3');
-    expect(product3Title).toBeInTheDocument();
-  });
-
-  it('renders all 3 products', async () => {
+  it('renders all products', async () => {
     const products = [
       {
         id: 1,

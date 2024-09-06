@@ -11,7 +11,7 @@ function setup() {
   };
 }
 
-describe('Product component with API mocked', () => {
+describe('Product component', () => {
   it('renders an image of a product', async () => {
     const { renderWithRouter, path } = setup();
     renderWithRouter(path);
@@ -100,7 +100,7 @@ describe('Product component with API mocked', () => {
     });
 
     describe('when clicking the Remove from Cart button', () => {
-      it('updates the cart navigation menu quantity to 0 and the quantity input to 1', async () => {
+      it('subtract the removed product quantity from the cart navigation menu quantity and sets the quantity input to 1', async () => {
         const user = userEvent.setup();
 
         const { renderWithRouter, path } = setup();

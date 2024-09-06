@@ -92,7 +92,7 @@ describe('Cart component', () => {
       expect(heading).toBeInTheDocument();
     });
 
-    it('renders all 4 products', async () => {
+    it('renders all products', async () => {
       const { renderWithRouter, path, overrideFetchedProducts } = setup();
       overrideFetchedProducts();
       renderWithRouter(path);
