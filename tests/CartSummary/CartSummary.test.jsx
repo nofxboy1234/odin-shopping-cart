@@ -92,7 +92,7 @@ describe('CartSummary component', () => {
   });
 
   describe('when clicking the checkout button', () => {
-    it.only('renders the thanks for shopping heading and removes the cart summary', async () => {
+    it('renders the thanks for shopping heading and removes the cart summary', async () => {
       const user = userEvent.setup();
 
       const { renderWithRouter, path, overrideFetchedProducts } = setup();
