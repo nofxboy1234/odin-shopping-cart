@@ -4,6 +4,7 @@ import {
   screen,
   waitFor,
   waitForElementToBeRemoved,
+  within,
 } from '@testing-library/react';
 import renderWithRouter from '../helpers/router';
 import { server, http, delay, HttpResponse } from '../setup';
@@ -200,7 +201,6 @@ describe('CartItem component', () => {
         await user.click(button);
 
         const title = screen.queryByText('a product');
-        // screen.debug();
         expect(title).toBeNull();
       });
 
@@ -252,6 +252,110 @@ describe('CartItem component', () => {
 
         await user.click(button);
         expect(heading).toHaveTextContent('Your shopping cart is empty');
+      });
+    });
+  });
+
+  describe('when there are multiple items in the cart', () => {
+    describe('when clicking the Remove from Cart button on one of the items', () => {
+      it('removes the cart item from the cart', async () => {
+        const user = userEvent.setup();
+
+        const { renderWithRouter, path, overrideFetchedProducts } = setup();
+        const cartItems = [
+          {
+            id: 1,
+            image: '',
+            title: 'a product',
+            price: 10.0,
+            quantity: 5,
+          },
+          {
+            id: 2,
+            image: '',
+            title: 'a product 2',
+            price: 20.0,
+            quantity: 2,
+          },
+        ];
+        overrideFetchedProducts(cartItems);
+        renderWithRouter(path);
+
+        const product1 = await screen.findByTestId('product1');
+        const product1Button = await within(product1).findByRole('button', {
+          name: 'Remove from Cart',
+        });
+        await user.click(product1Button);
+
+        const title = screen.queryByText('a product');
+        expect(title).toBeNull();
+      });
+
+      it('does not remove any other cart items from the cart', async () => {
+        const user = userEvent.setup();
+
+        const { renderWithRouter, path, overrideFetchedProducts } = setup();
+        const cartItems = [
+          {
+            id: 1,
+            image: '',
+            title: 'a product',
+            price: 10.0,
+            quantity: 5,
+          },
+          {
+            id: 2,
+            image: '',
+            title: 'a product 2',
+            price: 20.0,
+            quantity: 2,
+          },
+        ];
+        overrideFetchedProducts(cartItems);
+        renderWithRouter(path);
+
+        const product1 = await screen.findByTestId('product1');
+        const product1Button = await within(product1).findByRole('button', {
+          name: 'Remove from Cart',
+        });
+        await user.click(product1Button);
+
+        const title = await screen.findByText('a product 2');
+        expect(title).toBeInTheDocument();
+      });
+
+      it('subtracts the item quantity from the cart navigation menu', async () => {
+        const user = userEvent.setup();
+
+        const { renderWithRouter, path, overrideFetchedProducts } = setup();
+        const cartItems = [
+          {
+            id: 1,
+            image: '',
+            title: 'a product',
+            price: 10.0,
+            quantity: 5,
+          },
+          {
+            id: 2,
+            image: '',
+            title: 'a product 2',
+            price: 20.0,
+            quantity: 2,
+          },
+        ];
+        overrideFetchedProducts(cartItems);
+        renderWithRouter(path);
+
+        const product1 = await screen.findByTestId('product1');
+        const product1Button = await within(product1).findByRole('button', {
+          name: 'Remove from Cart',
+        });
+
+        const link = await screen.findByRole('link', { name: 'Cart (7)' });
+        await user.click(product1Button);
+
+        expect(link).toHaveTextContent('Cart (2)');
       });
     });
   });

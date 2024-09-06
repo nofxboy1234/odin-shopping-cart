@@ -23,7 +23,7 @@ const CartItem = ({ product }) => {
 
   return (
     <>
-      <div className={styles.product}>
+      <div className={styles.product} data-testid={`product${product.id}`}>
         <div className={styles.infoContainer}>
           <img
             src={product.image}
