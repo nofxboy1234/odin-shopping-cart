@@ -13,6 +13,47 @@ function setup() {
   return {
     renderWithRouter,
     path: '/cart',
+    overrideFetchedProducts: () => {
+      const cartItems = [
+        {
+          id: 1,
+          image: '',
+          title: 'a product',
+          price: 99.99,
+          quantity: 1,
+        },
+        {
+          id: 2,
+          image: '',
+          title: 'a product 2',
+          price: 999.99,
+          quantity: 2,
+        },
+        {
+          id: 3,
+          image: '',
+          title: 'a product 3',
+          price: 9999.99,
+          quantity: 3,
+        },
+        {
+          id: 4,
+          image: '',
+          title: 'a product 4',
+          price: 99999.99,
+          quantity: 4,
+        },
+      ];
+
+      server.use(
+        http.get('https://fakestoreapi.com/products', async () => {
+          // Wait for 500ms before responding.
+          await delay(500);
+
+          return HttpResponse.json(cartItems);
+        })
+      );
+    },
   };
 }
 
@@ -37,47 +78,8 @@ describe('Cart component', () => {
 
   describe('when the shopping cart has items in it', () => {
     it('renders the shopping cart heading', async () => {
-      const cartItems = [
-        {
-          id: 1,
-          image: '',
-          title: 'a product',
-          price: 99.99,
-          quantity: 1,
-        },
-        {
-          id: 2,
-          image: '',
-          title: 'a product 2',
-          price: 999.99,
-          quantity: 2,
-        },
-        {
-          id: 3,
-          image: '',
-          title: 'a product 3',
-          price: 9999.99,
-          quantity: 3,
-        },
-        {
-          id: 4,
-          image: '',
-          title: 'a product 4',
-          price: 99999.99,
-          quantity: 4,
-        },
-      ];
-
-      server.use(
-        http.get('https://fakestoreapi.com/products', async () => {
-          // Wait for 500ms before responding.
-          await delay(500);
-
-          return HttpResponse.json(cartItems);
-        })
-      );
-
-      const { renderWithRouter, path } = setup();
+      const { renderWithRouter, path, overrideFetchedProducts } = setup();
+      overrideFetchedProducts();
       renderWithRouter(path);
 
       const heading = await screen.findByText('Cart');
@@ -85,47 +87,8 @@ describe('Cart component', () => {
     });
 
     it('renders all 4 products', async () => {
-      const cartItems = [
-        {
-          id: 1,
-          image: '',
-          title: 'a product',
-          price: 99.99,
-          quantity: 1,
-        },
-        {
-          id: 2,
-          image: '',
-          title: 'a product 2',
-          price: 999.99,
-          quantity: 2,
-        },
-        {
-          id: 3,
-          image: '',
-          title: 'a product 3',
-          price: 9999.99,
-          quantity: 3,
-        },
-        {
-          id: 4,
-          image: '',
-          title: 'a product 4',
-          price: 99999.99,
-          quantity: 4,
-        },
-      ];
-
-      server.use(
-        http.get('https://fakestoreapi.com/products', async () => {
-          // Wait for 500ms before responding.
-          await delay(500);
-
-          return HttpResponse.json(cartItems);
-        })
-      );
-
-      const { renderWithRouter, path } = setup();
+      const { renderWithRouter, path, overrideFetchedProducts } = setup();
+      overrideFetchedProducts();
       renderWithRouter(path);
 
       const renderedProducts = await screen.findAllByText(/a product/);
