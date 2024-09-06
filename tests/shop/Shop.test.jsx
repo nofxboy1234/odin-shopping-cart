@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import { screen, waitFor } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import renderWithRouter from '../helpers/router';
-import userEvent from '@testing-library/user-event';
+import { server, http, delay, HttpResponse } from '../setup';
 
 function setup() {
   return {
@@ -12,8 +12,6 @@ function setup() {
 
 describe('Shop component', () => {
   it('renders the heading', async () => {
-    const user = userEvent.setup();
-
     const { renderWithRouter, path } = setup();
     renderWithRouter(path);
 
@@ -21,7 +19,44 @@ describe('Shop component', () => {
     expect(heading).toBeInTheDocument();
   });
 
-  it.skip('renders all the products', () => {
-    //
+  it('renders all the products', async () => {
+    const products = [
+      {
+        id: 1,
+        image: '',
+        title: 'a product',
+        price: 99.99,
+        quantity: 0,
+      },
+      {
+        id: 2,
+        image: '',
+        title: 'a product 2',
+        price: 999.99,
+        quantity: 0,
+      },
+      {
+        id: 3,
+        image: '',
+        title: 'a product 3',
+        price: 9999.99,
+        quantity: 0,
+      },
+    ];
+
+    server.use(
+      http.get('https://fakestoreapi.com/products', async () => {
+        // Wait for 500ms before responding.
+        await delay(500);
+
+        return HttpResponse.json(products);
+      })
+    );
+
+    const { renderWithRouter, path } = setup();
+    renderWithRouter(path);
+
+    const product1Title = await screen.findByText('a product');
+    expect(product1Title).toBeInTheDocument();
   });
 });
