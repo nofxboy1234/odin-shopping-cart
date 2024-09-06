@@ -25,6 +25,14 @@ describe('Cart component', () => {
       const heading = await screen.findByText('Your shopping cart is empty');
       expect(heading).toBeInTheDocument();
     });
+
+    it('renders no products', () => {
+      const { renderWithRouter, path } = setup();
+      renderWithRouter(path);
+
+      const renderedProducts = screen.queryAllByText(/a product/);
+      expect(renderedProducts).toHaveLength(0);
+    });
   });
 
   it('renders all the products', async () => {
