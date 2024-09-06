@@ -23,7 +23,7 @@
   - [x] user events
   - [x] snapshots
   - [~] mock callbacks
-  - [~] mock child components
+  - [x] mock child components
 
   - [x] Install
 
