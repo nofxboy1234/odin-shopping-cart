@@ -35,108 +35,101 @@ describe('Cart component', () => {
     });
   });
 
-  it('renders all the products', async () => {
-    const cartItems = [
-      {
-        id: 1,
-        image: '',
-        title: 'a product',
-        price: 99.99,
-        quantity: 1,
-      },
-      {
-        id: 2,
-        image: '',
-        title: 'a product 2',
-        price: 999.99,
-        quantity: 2,
-      },
-      {
-        id: 3,
-        image: '',
-        title: 'a product 3',
-        price: 9999.99,
-        quantity: 3,
-      },
-      {
-        id: 4,
-        image: '',
-        title: 'a product 4',
-        price: 99999.99,
-        quantity: 4,
-      },
-    ];
+  describe('when the shopping cart has items in it', () => {
+    it('renders the shopping cart heading', async () => {
+      const cartItems = [
+        {
+          id: 1,
+          image: '',
+          title: 'a product',
+          price: 99.99,
+          quantity: 1,
+        },
+        {
+          id: 2,
+          image: '',
+          title: 'a product 2',
+          price: 999.99,
+          quantity: 2,
+        },
+        {
+          id: 3,
+          image: '',
+          title: 'a product 3',
+          price: 9999.99,
+          quantity: 3,
+        },
+        {
+          id: 4,
+          image: '',
+          title: 'a product 4',
+          price: 99999.99,
+          quantity: 4,
+        },
+      ];
 
-    server.use(
-      http.get('https://fakestoreapi.com/products', async () => {
-        // Wait for 500ms before responding.
-        await delay(500);
+      server.use(
+        http.get('https://fakestoreapi.com/products', async () => {
+          // Wait for 500ms before responding.
+          await delay(500);
 
-        return HttpResponse.json(cartItems);
-      })
-    );
+          return HttpResponse.json(cartItems);
+        })
+      );
 
-    const { renderWithRouter, path } = setup();
-    renderWithRouter(path);
+      const { renderWithRouter, path } = setup();
+      renderWithRouter(path);
 
-    const product1Title = await screen.findByText('a product');
-    expect(product1Title).toBeInTheDocument();
+      const heading = await screen.findByText('Cart');
+      expect(heading).toBeInTheDocument();
+    });
 
-    const product2Title = await screen.findByText('a product 2');
-    expect(product2Title).toBeInTheDocument();
+    it('renders all 4 products', async () => {
+      const cartItems = [
+        {
+          id: 1,
+          image: '',
+          title: 'a product',
+          price: 99.99,
+          quantity: 1,
+        },
+        {
+          id: 2,
+          image: '',
+          title: 'a product 2',
+          price: 999.99,
+          quantity: 2,
+        },
+        {
+          id: 3,
+          image: '',
+          title: 'a product 3',
+          price: 9999.99,
+          quantity: 3,
+        },
+        {
+          id: 4,
+          image: '',
+          title: 'a product 4',
+          price: 99999.99,
+          quantity: 4,
+        },
+      ];
 
-    const product3Title = await screen.findByText('a product 3');
-    expect(product3Title).toBeInTheDocument();
+      server.use(
+        http.get('https://fakestoreapi.com/products', async () => {
+          // Wait for 500ms before responding.
+          await delay(500);
 
-    const product4Title = await screen.findByText('a product 4');
-    expect(product4Title).toBeInTheDocument();
-  });
+          return HttpResponse.json(cartItems);
+        })
+      );
 
-  it('renders all 4 products', async () => {
-    const cartItems = [
-      {
-        id: 1,
-        image: '',
-        title: 'a product',
-        price: 99.99,
-        quantity: 1,
-      },
-      {
-        id: 2,
-        image: '',
-        title: 'a product 2',
-        price: 999.99,
-        quantity: 2,
-      },
-      {
-        id: 3,
-        image: '',
-        title: 'a product 3',
-        price: 9999.99,
-        quantity: 3,
-      },
-      {
-        id: 4,
-        image: '',
-        title: 'a product 4',
-        price: 99999.99,
-        quantity: 4,
-      },
-    ];
+      const { renderWithRouter, path } = setup();
+      renderWithRouter(path);
 
-    server.use(
-      http.get('https://fakestoreapi.com/products', async () => {
-        // Wait for 500ms before responding.
-        await delay(500);
-
-        return HttpResponse.json(cartItems);
-      })
-    );
-
-    const { renderWithRouter, path } = setup();
-    renderWithRouter(path);
-
-    const renderedProducts = await screen.findAllByText(/a product/);
-    expect(renderedProducts).toHaveLength(4);
+      const renderedProducts = await screen.findAllByText(/a product/);
+      expect(renderedProducts).toHaveLength(4);
+    });
   });
 });
