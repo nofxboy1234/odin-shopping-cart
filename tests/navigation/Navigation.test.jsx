@@ -13,24 +13,7 @@ function setup() {
 describe('Navigation component', () => {
   it('renders the home link', async () => {
     const { renderWithRouter, path } = setup();
-    const { container } = renderWithRouter(path);
-
-    // console.log('********Roles');
-    // logRoles(container);
-    // console.log(getRoles(container));
-    // screen.debug();
-
-    // const loadingText = screen.getByText('Loading...');
-    // // const loadingText = screen.getByRole('paragraph');
-    // console.log(loadingText);
-    // screen.debug();
-    // expect(loadingText).toBeInTheDocument();
-
-    // The below block of code does not seem to work with msw
-    // const loadingText = await screen.findByRole('paragraph');
-    // console.log(loadingText);
-    // screen.debug();
-    // expect(loadingText).toBeInTheDocument();
+    renderWithRouter(path);
 
     const link = await screen.findByRole(
       'link',
@@ -62,14 +45,5 @@ describe('Navigation component', () => {
       { timeout: 2000 }
     );
     expect(link).toBeInTheDocument();
-  });
-
-  it.skip('renders the home page', async () => {
-    const { renderWithRouter, path } = setup();
-    renderWithRouter(path);
-
-    await waitFor(() => {
-      expect(screen.getByText('Welcome to Shopping Cart!')).toBeInTheDocument();
-    });
   });
 });

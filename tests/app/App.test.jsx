@@ -55,4 +55,19 @@ describe('App component', () => {
       expect(heading).toBeInTheDocument();
     });
   });
+
+  describe('when clicking the Home navbar link', async () => {
+    it('renders the home page', async () => {
+      const user = userEvent.setup();
+
+      const { renderWithRouter } = setup();
+      renderWithRouter('/cart');
+
+      const link = await screen.findByRole('link', { name: 'Home' });
+      await user.click(link);
+
+      const heading = await screen.findByText('Welcome to Shopping Cart!');
+      expect(heading).toBeInTheDocument();
+    });
+  });
 });
