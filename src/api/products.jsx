@@ -29,8 +29,41 @@ const useProducts = () => {
           return;
         }
 
-        setProducts([]);
-        setError(error);
+        const fakeProducts = [
+          {
+            id: 1,
+            image: '',
+            title: 'a product',
+            price: 10.99,
+            quantity: 0,
+          },
+          {
+            id: 2,
+            image: '',
+            title: 'a product 2',
+            price: 20.0,
+            quantity: 0,
+          },
+          {
+            id: 3,
+            image: '',
+            title: 'a product 3',
+            price: 30.0,
+            quantity: 0,
+          },
+          {
+            id: 4,
+            image: '',
+            title: 'a product 4',
+            price: 40.0,
+            quantity: 0,
+          },
+        ];
+
+        setProducts(fakeProducts);
+        setError(null);
+        // setProducts([]);
+        // setError(error);
       })
       .finally(() => setLoading(false));
 
