@@ -1,10 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import {
-  getByText,
-  screen,
-  waitFor,
-  waitForElementToBeRemoved,
-} from '@testing-library/react';
+import { screen, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import renderWithRouter from '../helpers/router';
 

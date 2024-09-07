@@ -1,7 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { getRoles, logRoles, screen, waitFor } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import renderWithRouter from '../helpers/router';
-import userEvent from '@testing-library/user-event';
 
 function setup() {
   return {

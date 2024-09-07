@@ -1,11 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import {
-  logRoles,
-  screen,
-  waitFor,
-  waitForElementToBeRemoved,
-  within,
-} from '@testing-library/react';
+import { screen, within } from '@testing-library/react';
 import renderWithRouter from '../helpers/router';
 import { server, http, delay, HttpResponse } from '../setup';
 import userEvent from '@testing-library/user-event';
@@ -62,10 +56,7 @@ describe('CartItem component', () => {
   it('renders the image', async () => {
     const { renderWithRouter, path, overrideFetchedProducts } = setup();
     overrideFetchedProducts();
-    const { container } = renderWithRouter(path);
-
-    // await waitForElementToBeRemoved(() => screen.getByText('Loading...'));
-    // logRoles(container);
+    renderWithRouter(path);
 
     const image = await screen.findByRole('img', {
       name: 'image of a product',

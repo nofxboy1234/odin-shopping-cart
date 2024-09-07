@@ -11,7 +11,7 @@ vi.mock('../../src/components/cartItem/CartItem', () => {
 
 vi.mock('../../src/components/CartSummary/CartSummary', () => {
   return {
-    default: ({ className, cart }) => <div>Cart Summary</div>,
+    default: () => <div>Cart Summary</div>,
   };
 });
 

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { logRoles, prettyDOM, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 
 import renderWithRouter from '../helpers/router';
 import userEvent from '@testing-library/user-event';
@@ -77,7 +77,7 @@ describe('Product component', () => {
         const user = userEvent.setup();
 
         const { renderWithRouter, path } = setup();
-        const { container } = renderWithRouter(path);
+        renderWithRouter(path);
 
         const button = await screen.findByRole('button', {
           name: 'Add to Cart',
@@ -104,7 +104,7 @@ describe('Product component', () => {
         const user = userEvent.setup();
 
         const { renderWithRouter, path } = setup();
-        const { container } = renderWithRouter(path);
+        renderWithRouter(path);
 
         const button = await screen.findByRole('button', {
           name: 'Add to Cart',
